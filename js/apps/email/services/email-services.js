@@ -8,43 +8,34 @@ export const emailService = {
     deleteMailById
 }
 
-var gMails;
+var gMails = baseEmails;
 getMails();
 
 function getMails() {
-    // set gMails = baseEmails;
     // check if add new mail, and update to gMails
+    // return gMails
 }
 
 function addMail(newMail) {
     //add new mail to gMails
 }
 
-function getMailById(id) {
-    for (var i = 0; i < gMails.length; i++) {
-        if (gMails[i].id === id) {
-            console.log(gMails[i])
-            return gMails[i];
-        }
-    }
+function getMailById(mailId) {
+    return gMails.find((mail) => mail.id === mailId);
 }
 
-function readMailById(id) {
-    for (var i = 0; i < gMails.length; i++) {
-        if (gMails[i].id === id) {
-            gMails[i].isread = true
-        }
-    }
+function readMailById(mailId) {
+    gMails.find((mail) => {
+        if (mail.id === mailId) mail.isRead = true;
+    });
     //sotre in sotrge
 }
 
 
 function deleteMailById(mailId) {
-    for (var i = 0; i < gMails.length; i++) {
-        if (gMails[i].id === mailId) {
-            //delete from storge
-        }
-    }
+    const idx = gMails.findIndex(mail => mail.id === mailId);
+    gMails.splice(idx, 1);
+    //save to storge
 }
 
 var baseEmails = [{
