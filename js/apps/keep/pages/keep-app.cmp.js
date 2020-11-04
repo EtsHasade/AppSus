@@ -1,7 +1,9 @@
 'use strict';
-import { notesService } from "../services/notesService.js";
+import {notesService} from "../services/notesService.js";
+import notesList from '../cmps/notes-list.cmp.js'
 
 export default {
+    name: 'keepApp',
     template: `
     <section class="keep app-container">
         <div class="bar-container">
@@ -9,11 +11,7 @@ export default {
             <!-- <editor-bar></editor-bar> -->
         </div>
         <div class="main-app-container">
-            <!-- <note-list></note-list> -->
-            noteList
-            <ul>
-                <li v-for="note in notesToShow">{{note.info.label}}</li>
-            </ul>
+            <notes-list :notes="notesToShow"></notes-list>
         </div>
         <div class="side-bar-container">
             filterNav
@@ -30,6 +28,9 @@ export default {
         notesToShow(){
             return this.notes
         }
+    },
+    components:{
+        notesList
     },
     created(){
         this.notes = notesService.getNotes()
