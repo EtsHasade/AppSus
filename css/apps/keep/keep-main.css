@@ -1,0 +1,34 @@
+
+
+.app-container{
+    --editor-bar-height: 80px;
+    --side-bar-width: 150px;
+    
+    display: grid;
+    grid-template: var(--editor-bar-height) 1fr / 1fr var(--side-bar-width);
+    width: 100%;
+    height: 100%;
+}
+
+.bar-container{
+background-color: #ac5;
+grid-column: 1/-1;
+
+}
+
+.main-app-container{
+    background-color: #a25;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    
+    
+    
+}
+
+.side-bar-container{
+    background-color: #25a;
+    grid-row: 2/3;
+    grid-column: 2/3;
+
+}
+

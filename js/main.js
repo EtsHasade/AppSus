@@ -1,5 +1,5 @@
 'use strict';
-import {myRouter} from './services/routers.js'
+import {myRouter} from './routers.js'
 import appHeader from "./cmps/app-header.cmp.js";
 
 
@@ -11,7 +11,7 @@ var app = new Vue({
         appHeader
     },
     template: `
-    <section>
+    <section class="main-container">
         <app-header></app-header>
         <router-view></router-view>
     </section>

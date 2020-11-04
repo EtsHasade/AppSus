@@ -16,11 +16,11 @@ export default {
                 <h1 class="logo"><router-link to="/">Lost legends</router-link></h1>
             </div>
             <nav class="main-nav">
-                <router-link to="/">Home page</router-link>
-                <!-- <router-link to="/">Email</router-link>
-                <router-link to="/">Keep</router-link>
-                <router-link to="/">Books</router-link>
-                <router-link to="/">About us</router-link> -->
+                <!-- <router-link to="/">Home page</router-link> -->
+                <!-- <router-link to="/">Email</router-link> -->
+                <router-link to="/keep">Keep</router-link>
+                <!-- <router-link to="/">Books</router-link> -->
+                <!-- <router-link to="/">About us</router-link> -->
             </nav>
     </section>
     `,

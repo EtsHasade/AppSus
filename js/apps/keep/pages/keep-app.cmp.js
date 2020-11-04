@@ -1,39 +1,24 @@
 'use strict';
 
 
-//DATA MODEL:
-// gNots = var notes = [
-//    {
-//     type: "NoteText",
-//     isPinned: true,
-//     info: {
-//          txt: "Fullstack Me Baby!"
-//          },
-//     style: {}
-//     },
-
-//     {
-//     type: "NoteImg",
-//     info: {
-//     url: "http://some-img/me",
-//     title: "Me playing Mi"
-//     },
-//     style: {
-//     backgroundColor: "#00d"
-//     }
-//     },
-//     {
-//     type: "NoteTodos",
-//     info: {
-//     label: "How was it:",
-//     todos: [
-//     { txt: "Do that", doneAt: null },
-//     { txt: "Do this", doneAt: 187111111 }
-//     ]
-//     }
-//     }
-//    ];
-
+export default {
+    template: `
+    <section class="app-container">
+        <div class="bar-container">
+            <!-- <editor-bar></editor-bar> -->
+            editBar
+        </div>
+        <div class="main-app-container">
+            <!-- <note-list></note-list> -->
+            noteList
+        </div>
+        <div class="side-bar-container">
+            <!-- <filter-nav></filter-nav> -->
+            filterNav
+        </div>
+    </section>
+    `,
+}
 
 
 //todo cmp keep-app:
