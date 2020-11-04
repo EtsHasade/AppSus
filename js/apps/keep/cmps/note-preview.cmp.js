@@ -1,9 +1,19 @@
 'use strict';
+import noteText from './note-text.cmp.js'
+import noteImg from './note-img.cmp.js'
+import noteToDo from './note-todo.cmp.js'
 
 export default {
     name: 'notePreview',
     props: ['note'],
     template:`
-        <h3>{{note.type}}</h3>
-    `
+    <div class="note-preview-container">  
+        <component :is="note.type" class="note-preview" :info="note.info">{{note.type}}</component>
+    </div>
+    `,
+    components:{
+        noteText,
+        noteImg,
+        noteToDo
+    }
 }

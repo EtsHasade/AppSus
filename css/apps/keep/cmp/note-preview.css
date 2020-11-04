@@ -1,0 +1,5 @@
+.note-preview{
+    background-color: var(--BG-items);
+    height: 100%;
+    cursor: pointer;
+}
