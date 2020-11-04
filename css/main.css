@@ -1,0 +1,11 @@
+@import './base.css';
+@import './fonts.css';
+
+
+/*----------------- global layout ------------------*/
+.main-container {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: 0 auto;
+}
