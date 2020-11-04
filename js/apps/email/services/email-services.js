@@ -1,5 +1,6 @@
 'use strict';
-import utilServices from './utilsService.js';
+import utilsServices from '../../../services/utils-service.js';
+
 
 export const emailService = {
     getMailById,
@@ -47,21 +48,21 @@ function deleteMailById(mailId) {
 }
 
 var baseEmails = [{
-        id: utilsService.makeId(),
+        id: utilsServices.makeId(),
         subject: 'my-friend',
         body: 'how atr you to day',
         isRead: true,
         to: 'puki',
         from: 'muki',
-        date: utilsService.getDate()
+        date: utilsServices.getDate()
     },
     {
-        id: utilsService.makeId(),
+        id: utilsServices.makeId(),
         subject: 'my-friend',
         body: 'im fine, and you?',
         isRead: false,
         to: 'muki',
         from: 'puki',
-        date: utilsService.getDate()
+        date: utilsServices.getDate()
     },
 ]

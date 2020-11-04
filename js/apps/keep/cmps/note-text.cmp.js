@@ -15,6 +15,7 @@ export default {
 //     type: "NoteText",
 //     isPinned: true,
 //     info: {
+//         label: 'fhhjj',
 //         txt: "Fullstack Me Baby!"
 //     },
 //     style: {}

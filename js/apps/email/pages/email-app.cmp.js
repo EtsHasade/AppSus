@@ -6,8 +6,9 @@
 
 
 export default {
+    name: 'emailApp',
     template: `
-    <section class="app-container">
+    <section class="email app-container">
         <div class="bar-container">
             <!-- <editor-bar></editor-bar> -->
             Main

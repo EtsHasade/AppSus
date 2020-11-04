@@ -22,6 +22,6 @@ function makeId(length = 5) {
 }
 
 function getDate() {
-    const date = JSON.stringify(new data()); // return str full date;
-    return str.substring(0, 11) + ' ' + str.substring(12, 20); // retun date & time
+    const date = JSON.stringify(new Date()); // return str full date;
+    return date.substring(0, 11) + ' ' + date.substring(12, 20); // retun date & time
 }

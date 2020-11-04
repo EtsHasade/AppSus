@@ -1,6 +1,6 @@
 'use strict';
 
-import utilsService from '../services/utilsService.js';
+import utilsService from '../services/utils-service.js';
 
 export default {
     props: ['email'],
