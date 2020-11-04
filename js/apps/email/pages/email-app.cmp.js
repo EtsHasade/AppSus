@@ -14,7 +14,7 @@ export default {
             Main
         </div>
         <div class="main-app-container">
-            <!-- <note-list></note-list> -->
+            <email-list></email-list>
             Email - List
         </div>
         <div class="side-bar-container">

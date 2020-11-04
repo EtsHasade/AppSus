@@ -3,6 +3,7 @@
 import utilsService from '../services/utils-service.js';
 
 export default {
+    name: 'email-compose',
     props: ['email'],
     template: `
         <section class="email-compose">
