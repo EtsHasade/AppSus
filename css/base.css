@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+:root {
+    --BG-labels: #aaaaaa;
+    --BG-main: #f7f7f7;
+    --BG-items: #6d9769;
+    --BG-mark: #ff7171;
+}
+
 body {
     padding: 0;
     margin: 0;

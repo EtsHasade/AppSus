@@ -1,4 +1,7 @@
-
+@import './cmp/notes-list.css';
+@import './cmp/note-preview.css';
+@import './cmp/note-img.css';
+@import './cmp/note-todo.css';
 
 .keep.app-container{
     --editor-bar-height: 80px;
@@ -11,13 +14,13 @@
 }
 
 .keep .bar-container{
-background-color: rgb(166, 199, 168);
+background-color: var(--BG-labels);
 grid-column: 1/-1;
 
 }
 
 .keep .main-app-container{
-    background-color: rgb(230, 191, 191);
+    background-color: var(--BG-main);
     grid-row: 2/3;
     grid-column: 1/2;
     
@@ -26,7 +29,7 @@ grid-column: 1/-1;
 }
 
 .keep .side-bar-container{
-    background-color: rgb(104, 186, 197);
+    background-color: var(--BG-items);
     grid-row: 2/3;
     grid-column: 2/3;
 

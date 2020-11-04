@@ -1,18 +1,19 @@
 //DATA MODEL:
 const gNotsDefault = [
     {
-        type: "NoteText",
+        type: "noteText",
         isPinned: true,
         info: {
+            label: 'I`m a dynamic cmp!',
             txt: "Fullstack Me Baby!"
         },
         style: {}
     },
 
     {
-        type: "NoteImg",
+        type: "noteImg",
         info: {
-            url: "http://some-img/me",
+            url: "https://images.freeimages.com/images/large-previews/035/young-golden-retriever-1404848.jpg",
             title: "Me playing Mi"
         },
         style: {
@@ -21,7 +22,7 @@ const gNotsDefault = [
     },
 
     {
-        type: "NoteTodos",
+        type: "noteToDo",
         info: {
             label: "How was it:",
             todos: [
