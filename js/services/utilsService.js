@@ -2,7 +2,8 @@
 
 export const utilsService = {
     randomInt,
-    makeId
+    makeId,
+    getDate
 }
 
 //return random num not-included
@@ -18,4 +19,9 @@ function makeId(length = 5) {
         txt += possible.charAt(Math.floor(Math.random() * possible.length));
     }
     return txt;
+}
+
+function getDate() {
+    const date = JSON.stringify(new data()); // return str full date;
+    return str.substring(0, 11) + ' ' + str.substring(12, 20); // retun date & time
 }
