@@ -1,28 +1,44 @@
 'use strict';
-
+import { notesService } from "../services/notesService.js";
 
 export default {
     template: `
-    <section class="app-container">
+    <section class="keep app-container">
         <div class="bar-container">
-            <!-- <editor-bar></editor-bar> -->
             editBar
+            <!-- <editor-bar></editor-bar> -->
         </div>
         <div class="main-app-container">
             <!-- <note-list></note-list> -->
             noteList
+            <ul>
+                <li v-for="note in notesToShow">{{note.info.label}}</li>
+            </ul>
         </div>
         <div class="side-bar-container">
-            <!-- <filter-nav></filter-nav> -->
             filterNav
+            <!-- <filter-nav></filter-nav> -->
         </div>
     </section>
     `,
+    data(){
+        return {
+            notes: []
+        }
+    },
+    computed:{
+        notesToShow(){
+            return this.notes
+        }
+    },
+    created(){
+        this.notes = notesService.getNotes()
+    }
 }
 
 
 //todo cmp keep-app:
-// lyout
+// lyout  -V
 // editor bar cmp
     // btn add txt-note cmp
     //...
