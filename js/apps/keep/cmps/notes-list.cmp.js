@@ -6,7 +6,7 @@ export default {
     props: ['notes'],
     template:`
         <section class="notes-list-container">
-            <note-preview v-for="(note, idx) in notes" :note="note" :key="idx"></note-preview>
+            <note-preview v-for="(note, idx) in notes" :note="note" :key="note.id"></note-preview>
         </section>
     `,
     components:{
