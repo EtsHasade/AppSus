@@ -1,9 +1,9 @@
 'use strict';
 
 
-//--------------- Elhanan-----------
+//--------------- Elhanan-----------add about
 export default {
-    template:`
+    template: `
         <section class="home-page">
             <div>
                 <h1>Wellcom to the Welcome to the Lost Bookstore.</h1>
