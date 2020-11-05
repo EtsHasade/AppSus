@@ -4,16 +4,17 @@
 //--------------- Elhanan-----------add about
 export default {
     template: `
-        <section class="home-page">
-            <div>
-                <h1>Wellcom to the Welcome to the Lost Bookstore.</h1>
-                <h3>
-                    Books destroyed?
-                    Books that no one has ever been interested in?
-                    They're here!
-                </h3>
-                <p>All of our books are unique, rare, and full of fascinating errors and logical problems that will blow your mind.</p>
-            </div>
-        </section>
-    `
+    <section class="home-page app-container">
+        <div class="bar-container">
+            editBar
+
+        </div>
+        <div class="main-app-container">
+            <h1>Wellcom to AppSus!</h1>
+        </div>
+        <div class="side-bar-container">
+            filterNav
+        </div>
+    </section>
+    `,
 }

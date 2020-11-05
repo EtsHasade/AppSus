@@ -1,0 +1,13 @@
+@font-face {
+    font-family: monsterrat;
+    src: url(../assets/fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: black-monsterrat;
+    src: url(../assets/fonts/Montserrat/Montserrat-Black.ttf);
+}
+
+html {
+    font-family: monsterrat, sans-serif;
+}
