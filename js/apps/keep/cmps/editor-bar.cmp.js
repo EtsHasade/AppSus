@@ -1,34 +1,28 @@
 'use strict';
 
 import { notesService } from "../services/notesService.js";
+import notePreview from './note-preview.cmp.js'
 
 
 export default {
     name: 'editorBar',
     template: `
         <section class="notes-list-container">
-            <div class="action-btns-container">
-                <button @click="addNote('txt')" >Enter text note...</button>
-                <button @click="addNote('img')" >img</button>
-                <button @click="addNote('todo')" >ToDo</button>
-                <button @click="addNote('vidoe')" >Vidoe</button>
-            </div>
-            
+            <note-preview v-if="noteEmpty" :note="noteEmpty"></note-preview>
         </section>
     `,
     components: {
-
+        notePreview
     },
     data() {
         return {
-            newNote: null
+            noteEmpty: null,
         }
     },
     methods:{
-        addNote(type) {
-           this.newNote = notesService.addNote(type);
-           this.newNote.info.label = 'booooom!'
-           console.log("addNote -> this.newNote", this.newNote)
-        }
+    },
+    created(){
+        this.noteEmpty = notesService.createNote('noteEmpty');
+        console.log("created -> this.emptyNote", this.noteEmpty)
     }
 }
