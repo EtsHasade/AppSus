@@ -13,7 +13,7 @@ export default {
             <input placeholder="Subject" v-model="compose.subject">
             <textarea class="compose-body" rows="6" cols="50" placeholder="email-text" v-model="compose.body"></textarea>
             </form>
-            <button class="btn  btn-send-mail" @click="send">Send</button>
+            <button class="btn btn-send-mail" @click="send">Send</button>
         </section> 
     `,
     data() {
@@ -26,6 +26,8 @@ export default {
                 to: '',
                 from: '',
                 date: '',
+                isBin: '',
+                isFavorie: '',
             },
         }
     },
