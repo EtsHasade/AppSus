@@ -13,6 +13,10 @@
     justify-content: space-between;
 }
 
+.mail-preview-details:hover {
+    background-color: rgb(248, 203, 185);
+}
+
 .mail-perview-btns {
     display: flex;
     align-items: center;
