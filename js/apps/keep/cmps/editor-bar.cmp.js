@@ -26,7 +26,9 @@ export default {
     },
     methods:{
         addNote(type) {
-           this.newNote = notesService.addNote(type)
+           this.newNote = notesService.addNote(type);
+           this.newNote.info.label = 'booooom!'
+           console.log("addNote -> this.newNote", this.newNote)
         }
     }
 }

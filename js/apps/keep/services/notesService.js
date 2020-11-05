@@ -122,6 +122,7 @@ function addNote(type) {
     }
 
     gNotes.unshift(note);
+    console.log("addNote -> note", note)
     //saveNotes()
     return note
 }
