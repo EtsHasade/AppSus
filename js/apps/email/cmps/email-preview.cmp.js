@@ -9,9 +9,8 @@ export default {
     name: 'email-preview',
     props: ['mail'],
     template: `
-        <li class="mail-preview-details-li" @click="selectedPreview" class="email-preview" :class="{ unReadMail: !mail.isread}">
-           <div class="mail-preview-details">
-         
+        <li @click="selectedPreview" class="email-preview" :class="{ unReadMail: !mail.isread}">
+           <div class="mail-preview-details">  
                 <div>
                     <h4 class="email-shows" >
                         {{mail.from}}
