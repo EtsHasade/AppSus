@@ -12,7 +12,7 @@ var gMails = baseEmails;
 getMails();
 
 function getMails() {
-    // check if add new mail, and update to gMails
+    // get gmails from storge
     // return gMails
 }
 
@@ -41,19 +41,23 @@ function deleteMailById(mailId) {
 var baseEmails = [{
         id: utilsServices.makeId(),
         subject: 'my-friend',
-        body: 'how atr you to day',
+        body: 'how are you bro?',
         isRead: true,
         to: 'puki',
         from: 'muki',
-        date: utilsServices.getDate()
+        date: utilsServices.getDate(),
+        isTrash: false,
+        isFavorie: true,
     },
     {
         id: utilsServices.makeId(),
         subject: 'my-friend',
-        body: 'im fine, and you?',
+        body: 'fine!, and you?',
         isRead: false,
         to: 'muki',
         from: 'puki',
-        date: utilsServices.getDate()
+        date: utilsServices.getDate(),
+        isTrash: false,
+        isFavorie: false,
     },
 ]
