@@ -1,7 +1,9 @@
 'use strict';
-import noteText from './note-text.cmp.js'
-import noteImg from './note-img.cmp.js'
-import noteToDo from './note-todo.cmp.js'
+import noteText from './note-text.cmp.js';
+import noteImg from './note-img.cmp.js';
+import noteToDo from './note-todo.cmp.js';
+import noteVidoe from './note-vidoe.cmp.js';
+
 
 export default {
     name: 'notePreview',
@@ -14,6 +16,7 @@ export default {
     components:{
         noteText,
         noteImg,
-        noteToDo
+        noteToDo,
+        noteVidoe
     }
 }

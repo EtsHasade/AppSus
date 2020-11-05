@@ -1,6 +1,7 @@
 'use strict';
 import {notesService} from "../services/notesService.js";
-import notesList from '../cmps/notes-list.cmp.js'
+import notesList from '../cmps/notes-list.cmp.js';
+import editorBar from '../cmps/editor-bar.cmp.js';
 
 export default {
     name: 'keepApp',
@@ -8,7 +9,7 @@ export default {
     <section class="keep app-container">
         <div class="bar-container">
             editBar
-            <!-- <editor-bar></editor-bar> -->
+            <editor-bar></editor-bar>
         </div>
         <div class="main-app-container">
             <notes-list :notes="notesToShow"></notes-list>
@@ -30,7 +31,8 @@ export default {
         }
     },
     components:{
-        notesList
+        notesList,
+        editorBar
     },
     created(){
         this.notes = notesService.getNotes()
