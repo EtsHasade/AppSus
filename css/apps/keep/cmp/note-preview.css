@@ -1,10 +1,52 @@
 .note-preview-container {
+    --border-radius: 5px;
     height: 100%;
     min-width: fit-content;
+    background-color: var(--BG-items);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
 }
 
 .note-preview{
-    background-color: var(--BG-items);
     height: 100%;
     cursor: pointer;
+}
+
+.actions-note-bar{
+    background-color: var(--BG-labels);
+    padding: 0.2em;
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+}
+
+.editor-bar-note {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    padding: 0.5em;
+    margin: 0 auto;
+    background-color: var(--BG-labels);
+}
+
+.editor-bar-note .note-preview>*{
+    margin: 0 1em;
+}
+
+
+.open-note {
+    position: absolute;
+    width: 80vw;
+    height: 50vh;
+    box-shadow: #000 0 10px 20px 10px;
+   
+}
+
+.open-note .note-preview{
+    cursor: text;
+}
+
+.editor-bar-note.open-note {
+    flex-direction: column;
 }
