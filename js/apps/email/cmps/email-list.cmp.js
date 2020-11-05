@@ -10,9 +10,11 @@ export default {
     template: `
         <ul class="mail-list">
             <!-- <li v-for="mail in mails" :key="mail.id"> -->
+            <router-link to="email/compose">new Email</router-link>
             <email-preview v-for="mail in mails" :key="mail.id" :mail="mail"></email-preview>
             <!-- </li> -->
         </ul>
+    
     `,
     data() {
         return {
