@@ -5,6 +5,7 @@
     background-color: var(--BG-items);
     border-top-right-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
+    border: 1px solid rgb(141, 141, 141);
 }
 
 .note-preview{

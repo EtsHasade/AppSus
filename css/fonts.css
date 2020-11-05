@@ -8,6 +8,17 @@
     src: url(../assets/fonts/Montserrat/Montserrat-Black.ttf);
 }
 
+@font-face {
+    font-family: Hind-Light;
+    src: url(../assets/fonts/Hind/Hind-Light.ttf);
+}
+
+@font-face {
+    font-family: Hind-SemiBold;
+    src: url(../assets/fonts/Hind/Hind-SemiBold.ttf);
+}
+
 html {
-    font-family: monsterrat, sans-serif;
+    font-family: Hind-Light, sans-serif;
+    color: var(--color-txt);
 }

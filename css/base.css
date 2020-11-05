@@ -3,15 +3,18 @@
 }
 
 :root {
-    --BG-labels: #d6d6d6;
+    /* --BG-labels: #ececec; */
+    --BG-labels: linear-gradient(190deg, rgba(230,230,230,1) 0%, rgba(255,255,255,1) 100%);
     --BG-main: #f7f7f7;
-    --BG-items: #ffffff;
+    --BG-items: #ececec;
     --BG-mark: #fa7f7f;
+    --color-txt: #2c64ff;
 }
 
 h1, h2 {
     margin-top: 0;
     margin-bottom: 0;
+    font-family: inherit;
 }
 
 body {
