@@ -3,10 +3,10 @@
 }
 
 :root {
-    --BG-labels: #aaaaaa;
+    --BG-labels: #d6d6d6;
     --BG-main: #f7f7f7;
-    --BG-items: #6d9769;
-    --BG-mark: #ff7171;
+    --BG-items: #ffffff;
+    --BG-mark: #fa7f7f;
 }
 
 h1, h2 {
