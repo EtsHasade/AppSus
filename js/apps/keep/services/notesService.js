@@ -4,7 +4,8 @@ import { utilsService } from "../../../services/utils-service.js";
 
 export const notesService = {
     getNotes,
-    addNote
+    addNote,
+    createNote
 }
 
 //DATA MODEL:
@@ -49,7 +50,7 @@ const gNotsDefault = [
         id: utilsService.makeId(),
         info: {
             label: "see that",
-            url:   'bgb' // 'https://www.youtube.com/embed/tgbNymZ7vqY'
+            url: 'bgb' // 'https://www.youtube.com/embed/tgbNymZ7vqY'
         }
     }
 ];
@@ -62,6 +63,16 @@ function getNotes() {
     return gNotes;
 }
 
+
+function createNote(type) {
+    let note = noteTypes.noteEmpty;
+    note.type = type;
+    note.info = noteTypes[type].info;
+    note.style = noteTypes[type].style;
+
+console.log("createNote -> note", note)
+return note;
+}
 
 function addNote(type) {
     let note = null;
@@ -79,7 +90,7 @@ function addNote(type) {
                 style: {}
             }
             break;
-    
+
         case 'img':
             note = {
                 type: "noteImg",
@@ -93,7 +104,7 @@ function addNote(type) {
                 }
             }
             break;
-    
+
         case 'todo':
             note = {
                 type: "noteToDo",
@@ -104,18 +115,18 @@ function addNote(type) {
                         { txt: "Do that", doneAt: null },
                         { txt: "Do this", doneAt: 187111111 }
                     ]
-        
+
                 }
             }
             break;
-    
+
         case 'vidoe':
             note = {
                 type: "noteVidoe",
                 id: utilsService.makeId(),
                 info: {
                     label: "see that",
-                    url:   'https://...' // 'https://www.youtube.com/embed/tgbNymZ7vqY'
+                    url: 'https://...' // 'https://www.youtube.com/embed/tgbNymZ7vqY'
                 }
             }
             break;
@@ -126,4 +137,55 @@ function addNote(type) {
     //saveNotes()
     return note
 }
+
+
+
+
+const noteTypes = {
+    noteEmpty: {
+        type: 'noteEmpty',
+        id: utilsService.makeId(),
+        info: {
+            label: "Add note...",
+        },
+        isPinned: false,
+        style: {
+            backgroundColor: 'var(--BG-items)'
+        }
+    },
+    noteText: {
+        type: 'noteText',
+        Info: {
+            txt: "your msg...",
+            label: "Add note...",
+        }
+    },
+    noteImg: {
+        type: 'noteImg',
+        info: {
+            url: 'https...',//"https://images.freeimages.com/images/large-previews/035/young-golden-retriever-1404848.jpg",
+            title: "Me playing Mi",
+            label: "My image",
+        }
+    },
+    noteToDo: {
+        type: 'noteToDo',
+        info: {
+            todos: [
+                { txt: "Do that", doneAt: null },
+                { txt: "Do this", doneAt: 187111111 }
+            ]
+            ,label: "ToDo list",
+        }
+    },
+    noteVidoe: {
+        type: 'noteVidoe',
+        info: {
+            url: 'https...',//"https://images.freeimages.com/images/large-previews/035/young-golden-retriever-1404848.jpg",
+            title: "My vidoe",
+            label: "My vidoe",
+        }
+    },
+}
+
 
