@@ -16,7 +16,6 @@ export default {
                 <textarea class="compose-body" rows="6" cols="50" placeholder="email-text:" v-model:value="compose.body"></textarea>
                 <input type="submit" value="send mail">
             </form>
-            <!-- <button class="btn btn-send-mail" @click="send">Send</button> -->
         </section> 
     `,
     data() {
@@ -51,7 +50,6 @@ export default {
             console.log(this.compose)
             emailService.addMail(this.compose)
         },
-        // send() {
-        // },
+
     },
 }

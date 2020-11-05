@@ -10,7 +10,7 @@ export default {
     props: ['mail'],
     template: `
         <li @click="selectedPreview" class="email-preview" :class="{ unReadMail: !mail.isread}">
-           <div  class="mail-preview-details">
+           <div class="mail-preview-details">
          
                 <div>
                     <h4 class="email-shows" >
@@ -18,7 +18,7 @@ export default {
                     </h4>
                 </div>
                 <div class="email-shows" >
-                    <!-- <long-text :txtLimit="100" :txt="mail.body"></long-text> -->
+                    <long-text :txtLimit="100" :txt="mail.body"></long-text>
                     <!-- {{mail.body}} -->
                     {{mail.date}}
                     <button class="stars" @click.stop="starringMail" v-if="!mail.isStarred">&star;</button>
@@ -45,21 +45,23 @@ export default {
             eventBus.$emit('read', this.mail.id);
         },
         onDeleteMail() {
-            eventBus.$emit('Confirm', 'Are you sure you to delete this mail?', this.deleteMail);
+            eventBus.$emit('Confirm', 'Are you sure you to delete this mail?', this.deleteMail());
+
         },
         onRemindMail() {
-            eventBus.$emit('Remind you this mail later', this.remindMail);
+            eventBus.$emit('Remind you this mail later', this.remindMail());
         },
         selectedPreview() {
             this.selected = !this.selected;
         },
         deleteMail() {
             this.mail.trash = !this.mail.trash;
-            console.log(this.mail.id);
-            eventBus.$emit('delete', this.mail.id);
+            console.log('delete mail by id: ', this.mail.id);
+            emailService.deleteMailById(this.mail.id);
         },
         remindMail() {
             //add this mail to remind mail list
+            console.log('remind Mail by id:', this.mail.id)
         },
         starringMail() {
             eventBus.$emit('starring', this.mail.id);

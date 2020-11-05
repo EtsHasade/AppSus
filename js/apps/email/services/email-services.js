@@ -9,7 +9,8 @@ export const emailService = {
     deleteMailById,
     getMails,
     favorieMailById,
-    addMail
+    addMail,
+    countReadMails
 }
 
 const baseEmails = [{
@@ -30,6 +31,28 @@ const baseEmails = [{
         isRead: false,
         to: 'muki',
         from: 'puki',
+        date: utilsService.getDate(),
+        isTrash: false,
+        isFavorie: false,
+    },
+    {
+        id: utilsService.makeId(),
+        subject: 'haha',
+        body: 'call me back plase',
+        isRead: false,
+        to: 'dudi',
+        from: 'suki',
+        date: utilsService.getDate(),
+        isTrash: false,
+        isFavorie: false,
+    },
+    {
+        id: utilsService.makeId(),
+        subject: 'baba',
+        body: 'where are you, i looking for you for long time kjhdfjksgdsjgjshfhskhgjgshkdhkjgkjsgdskghsd jkdsgjkdskghksjhghdkhgkhhg',
+        isRead: false,
+        to: 'suki',
+        from: 'dudi',
         date: utilsService.getDate(),
         isTrash: false,
         isFavorie: false,
@@ -82,9 +105,16 @@ function readMailById(mailId) {
     //sotre in sotrge
 }
 
-
 function deleteMailById(mailId) {
     const idx = gMails.findIndex(mail => mail.id === mailId);
     gMails.splice(idx, 1);
     //save to storge
+}
+
+function countReadMails() {
+    let count = 0;
+    for (var i = 0; i < gMails.length; i++) {
+        if (gMails[i].isRead === true) count++;
+    }
+    return count;
 }
