@@ -50,13 +50,13 @@ function loadMailsFromStorge() {
 function addMail(newMail) {
     //add new mail to gMails
     let addNewMail = {
-        id: utilsService.makeId(),
+        id: newMail.id,
         subject: newMail.subject,
         body: newMail.body,
         isRead: false,
         to: 'puki',
         from: newMail.from,
-        date: utilsService.getDate(),
+        date: newMail.date,
         isTrash: false,
         isFavorie: false,
     }

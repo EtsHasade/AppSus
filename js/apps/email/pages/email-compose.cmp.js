@@ -1,8 +1,8 @@
 'use strict';
 
 import { utilsService } from "../../../services/utils-service.js";
-import { eventBus } from "../../../services/eventBus-service.js"
-
+import { eventBus } from "../../../services/eventBus-service.js";
+import { emailService } from "../services/email-services.js";
 
 export default {
     name: 'email-compose',
@@ -10,10 +10,10 @@ export default {
     template: `
         <section class="email-compose">
             <div>new email messege</div>
-            <form  @submit.prevent="submiton">
-                <input type="text" ref="mailTo" placeholder="To:" v-model="compose.to" > 
-                <input type="text" ref="mailSubject" placeholder="Subject:" v-model="compose.subject">
-                <textarea ref="mailBody" class="compose-body" rows="6" cols="50" placeholder="email-text:" v-model="compose.body"></textarea>
+            <form @submit.prevent="submiton">
+                <input type="text" placeholder="To:" v-model:value="compose.to" > 
+                <input type="text" placeholder="Subject:" v-model:value="compose.subject">
+                <textarea class="compose-body" rows="6" cols="50" placeholder="email-text:" v-model:value="compose.body"></textarea>
                 <input type="submit" value="send mail">
             </form>
             <!-- <button class="btn btn-send-mail" @click="send">Send</button> -->
@@ -22,21 +22,21 @@ export default {
     data() {
         return {
             compose: {
-                // id: null,
-                // subject: '',
-                // body: '',
-                // isRead: false,
-                // to: '',
-                // from: '',
-                // date: '',
-                // isTrash: '',
-                // isFavorie: '',
+                id: null,
+                subject: '',
+                body: '',
+                isRead: false,
+                to: '',
+                from: 'userName',
+                date: '',
+                isTrash: false,
+                isFavorie: false,
             },
         }
     },
     created() {
-        this.composed.id = utilsService.makeId();
-        console.log('email id:', this.composed.id);
+        this.compose.id = utilsService.makeId();
+        console.log('email id:', this.compose.id);
         eventBus.$on('email-sent', (email) => {
             this.$nextTick(() => {
                 this.compose.to = email.from;
@@ -45,14 +45,11 @@ export default {
     },
     methods: {
         submiton() {
-            console.log(this.newMail)
-            eventBus.$emit('sending the new mail', this.newMail)
-            this.compose.to = this.$refs.mailTo.value;
-            this.compose.subject = this.$refs.mailSubject.value;
-            this.compose.body = this.$refs.mailBody.value;
+            console.log(this.compose)
+            eventBus.$emit('sending the new mail', this.compose)
             this.compose.date = utilsService.getDate();
-            console.log(this.newMail)
-
+            console.log(this.compose)
+            emailService.addMail(this.compose)
         },
         // send() {
         // },
