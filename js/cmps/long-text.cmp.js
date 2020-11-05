@@ -1,7 +1,7 @@
 'use strict';
 //
 export default {
-    props: ["txt"],
+    props: ["txt","initLength"],
     template: `
     <section class="mr-5">
       <p>{{textToShow}}</p>
@@ -11,13 +11,14 @@ export default {
     data() {
         return {
             isShowAll: false,
+            length: this.initLength || 100
         };
     },
     computed: {
         textToShow() {
             const txt = this.txt;
-            if (txt.length > 100 && !this.isShowAll) {
-                return txt.substring(0, 100) + "...";
+            if (txt.length > this.length && !this.isShowAll) {
+                return txt.substring(0, this.length) + "...";
             } else return txt;
         },
         buttonTxt() {

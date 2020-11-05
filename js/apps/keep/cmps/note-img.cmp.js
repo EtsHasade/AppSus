@@ -1,5 +1,6 @@
 'use strict';
-import {eventBus} from '../../../services/eventBus-service.js'
+import {eventBus} from '../../../services/eventBus-service.js';
+import longTxt from '../../../cmps/long-text.cmp.js'
 
 
 export default {
@@ -9,7 +10,8 @@ export default {
         <section class="note-img">
             <h2 class="note-title" ref="title" name="title" @blur="onSaveTxt('title')" contenteditable="true" :innerText="info.title">{{info.title}}</h2>
             <img contenteditable="true" :src="info.url" alt="">
-            <p class="note-url" ref="url" name="url" @blur="onSaveTxt('url')" contenteditable="true" >{{info.url}}</p>
+            <!-- <p class="note-url" ref="url" name="url" @blur="onSaveTxt('url')" contenteditable="true" >{{info.url}}</p> -->
+            <long-txt :txt="info.url" initLength="20" contenteditable="true" class="note-url" ref="url" name="url" @blur="onSaveTxt('url')"></long-txt>
         </section>
     `,
     data() {
@@ -31,6 +33,9 @@ export default {
             this.note.info[fildName] = elItem.innerText;
             this.emitSaveNoteChanges()     
         }
+    },
+    components: {
+        longTxt
     }
 }
 
