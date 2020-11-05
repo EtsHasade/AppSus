@@ -7,7 +7,9 @@ export const emailService = {
     getMailById,
     readMailById,
     deleteMailById,
-    getMails
+    getMails,
+    favorieMailById,
+    addMail
 }
 
 const baseEmails = [{
@@ -47,10 +49,30 @@ function loadMailsFromStorge() {
 
 function addMail(newMail) {
     //add new mail to gMails
+    let addNewMail = {
+        id: utilsService.makeId(),
+        subject: newMail.subject,
+        body: newMail.body,
+        isRead: false,
+        to: 'puki',
+        from: newMail.from,
+        date: utilsService.getDate(),
+        isTrash: false,
+        isFavorie: false,
+    }
+    gMails.unshift(addNewMail);
+    //sotre in sotrge
 }
 
 function getMailById(mailId) {
     return gMails.find((mail) => mail.id === mailId);
+}
+
+function favorieMailById(mailId) {
+    gMails.find((mail) => {
+        if (mail.id === mailId) mail.isFavorie = true;
+    });
+    //sotre in sotrge
 }
 
 function readMailById(mailId) {

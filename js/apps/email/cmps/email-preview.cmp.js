@@ -18,19 +18,19 @@ export default {
                     </h4>
                 </div>
                 <div class="email-shows" >
-                    {{mail.body}}
+                    <!-- <long-text :txtLimit="100" :txt="mail.body"></long-text> -->
+                    <!-- {{mail.body}} -->
                     {{mail.date}}
                     <button class="stars" @click.stop="starringMail" v-if="!mail.isStarred">&star;</button>
                     <button class="yellow-stars" @click.stop="starringMail" v-else>&starf;</button>
                 </div>
             </div>
             <div class="mail-perview-btns" v-if="selected">
-                <button @click="onDeleteMail">🛒<i class="fas fa-trash-alt"></i></button>
-                <button @click="onDeleteMail"><i class="fas fa-business-time"></i></button>
+                <button @click="onDeleteMail">🗑️<i class="fas fa-trash-alt"></i></button>
+                <button @click="onRemindMail">⏲️<i class="fas fa-business-time"></i></button>
                 <!-- <button @click="makeNote"><i class="far fa-clipboard"></i></button> -->
                 <!-- add: ^^remind me later^^ + open new page with the mail -->
                 <!-- <router-link :to="'________'+mail.id"><button @click="read"> <i class="fas fa-envelope-open"></i> </button></router-link> -->
-                <long-text :txtLimit="100" :txt="mail.subtitle"></long-text>
             </div>
         </li>
     `,
@@ -43,10 +43,12 @@ export default {
     methods: {
         read() {
             eventBus.$emit('read', this.mail.id);
-
         },
         onDeleteMail() {
             eventBus.$emit('Confirm', 'Are you sure you to delete this mail?', this.deleteMail);
+        },
+        onRemindMail() {
+            eventBus.$emit('Remind you this mail later', this.remindMail);
         },
         selectedPreview() {
             this.selected = !this.selected;
@@ -56,8 +58,14 @@ export default {
             console.log(this.mail.id);
             eventBus.$emit('delete', this.mail.id);
         },
+        remindMail() {
+            //add this mail to remind mail list
+        },
         starringMail() {
             eventBus.$emit('starring', this.mail.id);
+        },
+        makeNote() {
+            // conect to note app
         },
     },
     components: {
