@@ -5,7 +5,7 @@ export default {
     template: `
     <section class="mr-5">
       <p>{{textToShow}}</p>
-      <button @click="isShowAll = !isShowAll">{{buttonTxt}}</button>
+      <button @click.stop="isShowAll = !isShowAll">{{buttonTxt}}</button>
     </section>
     `,
     data() {

@@ -9,7 +9,7 @@ export default {
         <section class="note-vidoe">
             <h2 class="note-title" ref="label" name="label" @blur="onSaveTxt('label')" >{{info.label}}</h2>
             <iframe class="note-video-frame" :width="width" :height="height" :src="info.url"></iframe>
-            <p class="note-url" ref="url" name="url" @blur="onSaveTxt('url')" contenteditable="true" >{{info.url}}</p>
+            <long-txt :txt="info.url" initLength="20" contenteditable="true" class="note-url" ref="url" name="url" @blur="onSaveTxt('url')"></long-txt>
         </section>
     `,
     data(){
