@@ -1,2 +1,7 @@
 
-
+.todo-line{
+    display: flex;
+}
+.todo-line.done *{
+    text-decoration: line-through;
+}

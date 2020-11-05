@@ -5,12 +5,13 @@ import { storageService } from "../../../services/storage-service.cmp.js";
 
 export const notesService = {
     getNotes,
-    addNote,
-    createNote
+    addOrUpdateNote,
+    createNote,
+    deleteNoteById,
+    getNoteById,
+    getCopyNoteById
 }
 
-//DATA MODEL:
-// const gNotsDefault = [
 
 const noteTypes = {
     noteEmpty: {
@@ -42,8 +43,8 @@ const noteTypes = {
         type: 'noteToDo',
         info: {
             todos: [
-                { txt: "Do that", doneAt: null },
-                { txt: "Do this", doneAt: 187111111 }
+                { txt: "Do that", isDone: false, doneAt: null },
+                { txt: "Do this", isDone: false, doneAt: 187111111 }
             ]
             ,label: "ToDo list",
         }
@@ -89,69 +90,39 @@ console.log("createNote -> note", note)
 return note;
 }
 
-function addNote(type) {
-    let note = null;
+function addOrUpdateNote(noteChange) {
+    noteChange = JSON.parse(JSON.stringify(noteChange))
 
-    switch (type) {
-        case 'txt':
-            note = {
-                type: "noteText",
-                id: utilsService.makeId(10),
-                isPinned: true,
-                info: {
-                    label: 'I`m a dynamic cmp!',
-                    txt: "Fullstack Me Baby!"
-                },
-                style: {}
-            }
-            break;
-
-        case 'img':
-            note = {
-                type: "noteImg",
-                id: utilsService.makeId(10),
-                info: {
-                    url: "https://images.freeimages.com/images/large-previews/035/young-golden-retriever-1404848.jpg",
-                    title: "Me playing Mi"
-                },
-                style: {
-                    backgroundColor: "#00d"
-                }
-            }
-            break;
-
-        case 'todo':
-            note = {
-                type: "noteToDo",
-                id: utilsService.makeId(10),
-                info: {
-                    label: "How was it:",
-                    todos: [
-                        { txt: "Do that", doneAt: null },
-                        { txt: "Do this", doneAt: 187111111 }
-                    ]
-
-                }
-            }
-            break;
-
-        case 'vidoe':
-            note = {
-                type: "noteVidoe",
-                id: utilsService.makeId(10),
-                info: {
-                    label: "see that",
-                    url: 'https://www.youtube.com/embed/tgbNymZ7vqY'
-                }
-            }
-            break;
-    }
-
-    gNotes.unshift(note);
-    console.log("addNote -> note", note)
-    //saveNotes()
-    return note
+    const theNoteIdx = gNotes.findIndex(note => note.id === noteChange.id);
+    if (theNoteIdx === -1) gNotes.unshift(noteChange);
+    else  gNotes[theNoteIdx] = noteChange;
+    
+    saveNotes()
+    return noteChange
 }
+
+function deleteNoteById(noteId) {
+    const theNoteIdx = gNotes.findIndex(note => note.id === noteId);
+    if (theNoteIdx === -1) console.log('failed to delete note. note id:'+ noteId);
+    else  gNotes.splice(theNoteIdx,1)
+    saveNotes()
+}
+
+
+function getNoteById(noteId) {
+    const note = gNotes.find(note => note.id === noteId);
+    if (theNoteIdx === -1) console.log('failed to get note. note id:'+ noteId);
+    else  return note
+}
+
+function getCopyNoteById(noteId) {
+    const note = gNotes.find(note => note.id === noteId);
+    if (theNoteIdx === -1) console.log('failed to get note. note id:'+ noteId);
+    else  return JSON.parse(JSON.stringify(note))
+}
+
+
+
 
 
 

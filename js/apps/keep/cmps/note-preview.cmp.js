@@ -12,7 +12,7 @@ export default {
     props: ['note'],
     template:`
     <section class="note-preview-container" :class="{'open-note': isSelected}" >  
-        <component :is="note.type" class="note-preview" @saveNote="" :info="note.info" @click.native="isSelected = true"></component>
+        <component :is="note.type" class="note-preview" @saveNote="" :note="note" @click.native="isSelected = true"></component>
         <div class="actions-note-bar" >
             <button>+img</button>
             <button>+text</button>

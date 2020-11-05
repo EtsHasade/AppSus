@@ -1,8 +1,10 @@
 'use strict';
 
+import { notesService } from "../services/notesService.js";
+
 export default {
     name: 'noteText',
-    props: ['info'],
+    props: ['note'],
     template: `
         <section>
             <h2 class="note-title" :innerText="info.label" contenteditable="true">{{info.label}}</h2>
@@ -12,6 +14,14 @@ export default {
             </div>
         </section>
     `,
+    data(){
+        return{
+            info: null
+        }
+    },
+    created(){
+        this.info = this.note.info
+    },
     methods: {
         saveNote() {
             this.$emit('saveNote', this.info)
