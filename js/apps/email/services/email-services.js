@@ -1,17 +1,46 @@
 'use strict';
-import utilsServices from '../../../services/utils-service.js';
+// import { utilsServices } from '../../../services/utils-service.js';
+import { utilsService } from "../../../services/utils-service.js";
 
 
 export const emailService = {
     getMailById,
     readMailById,
-    deleteMailById
+    deleteMailById,
+    getMails
 }
 
+const baseEmails = [{
+        id: utilsService.makeId(),
+        subject: 'my-friend',
+        body: 'how are you bro?',
+        isRead: true,
+        to: 'puki',
+        from: 'muki',
+        date: utilsService.getDate(),
+        isTrash: false,
+        isFavorie: true,
+    },
+    {
+        id: utilsService.makeId(),
+        subject: 'my-friend',
+        body: 'fine!, and you?',
+        isRead: false,
+        to: 'muki',
+        from: 'puki',
+        date: utilsService.getDate(),
+        isTrash: false,
+        isFavorie: false,
+    },
+]
 var gMails = baseEmails;
-getMails();
+loadMailsFromStorge();
 
 function getMails() {
+    return gMails;
+}
+
+function loadMailsFromStorge() {
     // get gmails from storge
     // return gMails
 }
@@ -37,27 +66,3 @@ function deleteMailById(mailId) {
     gMails.splice(idx, 1);
     //save to storge
 }
-
-var baseEmails = [{
-        id: utilsServices.makeId(),
-        subject: 'my-friend',
-        body: 'how are you bro?',
-        isRead: true,
-        to: 'puki',
-        from: 'muki',
-        date: utilsServices.getDate(),
-        isTrash: false,
-        isFavorie: true,
-    },
-    {
-        id: utilsServices.makeId(),
-        subject: 'my-friend',
-        body: 'fine!, and you?',
-        isRead: false,
-        to: 'muki',
-        from: 'puki',
-        date: utilsServices.getDate(),
-        isTrash: false,
-        isFavorie: false,
-    },
-]

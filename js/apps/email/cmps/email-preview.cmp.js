@@ -3,40 +3,36 @@
 
 import { eventBus } from '../../../services/eventBus-service.js';
 import { emailService } from '../services/email-services.js';
-// add import lont-txt from global-cmps
-
+import longText from '../../../cmps/long-text.cmp.js'
 
 export default {
     name: 'email-preview',
     props: ['mail'],
     template: `
-        <section @click="selectedPreview" class="email-preview" :class="{ unReadMail: !mail.isread}">
-           <div  class="flex space-between align-center ">
+        <li @click="selectedPreview" class="email-preview" :class="{ unReadMail: !mail.isread}">
+           <div  class="mail-preview-details">
          
-            <div>
-                {{mail.subject}}
-                <div class="email-shows">
-                    {{mail.from}}
-                    <email-short-text :txtLimit="30" :txt="mail.subtitle"></email-short-text>
+                <div>
+                    <h4 class="email-shows" >
+                        {{mail.from}}
+                    </h4>
                 </div>
-             </div>
-            <div class="email-shows" >
+                <div class="email-shows" >
                     {{mail.body}}
                     {{mail.date}}
                     <button class="stars" @click.stop="starringMail" v-if="!mail.isStarred">&star;</button>
                     <button class="yellow-stars" @click.stop="starringMail" v-else>&starf;</button>
+                </div>
             </div>
-            </div>
-            <div class="sub-title-perview" v-if="selected">
-                <button @click="onDeleteMail"><i class="fas fa-trash-alt"></i></button>
+            <div class="mail-perview-btns" v-if="selected">
+                <button @click="onDeleteMail">🛒<i class="fas fa-trash-alt"></i></button>
                 <button @click="onDeleteMail"><i class="fas fa-business-time"></i></button>
                 <!-- <button @click="makeNote"><i class="far fa-clipboard"></i></button> -->
                 <!-- add: ^^remind me later^^ + open new page with the mail -->
                 <!-- <router-link :to="'________'+mail.id"><button @click="read"> <i class="fas fa-envelope-open"></i> </button></router-link> -->
                 <long-text :txtLimit="100" :txt="mail.subtitle"></long-text>
-
             </div>
-        </section>
+        </li>
     `,
     data() {
         return {

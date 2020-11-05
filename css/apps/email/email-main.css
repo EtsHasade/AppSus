@@ -1,34 +1,26 @@
-
-
-.email.app-container{
+@import './cmp/email-preview.css';
+.email.app-container {
     --editor-bar-height: 80px;
     --side-bar-width: 150px;
-
     display: grid;
     grid-template: var(--editor-bar-height) 1fr / 1fr var(--side-bar-width);
     width: 100%;
     height: 100%;
 }
 
-.email .bar-container{
-background-color: var(--BG-labels);
-grid-column: 1/-1;
-
+.email .bar-container {
+    background-color: var(--BG-labels);
+    grid-column: 1/-1;
 }
 
-.email .main-app-container{
+.email .main-app-container {
     background-color: var(--BG-main);
     grid-row: 2/3;
     grid-column: 1/2;
-    
-    
-    
 }
 
-.email .side-bar-container{
+.email .side-bar-container {
     background-color: var(--BG-items);
     grid-row: 2/3;
     grid-column: 2/3;
-
 }
-

@@ -8,9 +8,9 @@ export default {
     props: ['mails'],
     template: `
         <ul class="mail-list">
-            <li v-for="mail in mails" :key="mail.id" >
-            <email-preview :mail="mail"></email-preview>
-            </li>
+            <!-- <li v-for="mail in mails" :key="mail.id"> -->
+            <email-preview v-for="mail in mails" :key="mail.id" :mail="mail"></email-preview>
+            <!-- </li> -->
         </ul>
     `,
     components: {

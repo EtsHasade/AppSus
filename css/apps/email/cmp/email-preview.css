@@ -1,0 +1,26 @@
+.email-preview {
+    /*li*/
+    list-style-type: none;
+    display: flex;
+    border: 1px solid black;
+    margin: 2px;
+    justify-content: space-between;
+}
+
+.mail-preview-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mail-perview-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mail-perview-btns>*,
+.mail-preview-details>* {
+    display: inline-block;
+    margin: 0 1em;
+}

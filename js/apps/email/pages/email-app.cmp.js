@@ -1,6 +1,7 @@
 'use strict';
 
-// import emailList from '../cmps/email-list.cmp'
+import emailList from '../cmps/email-list.cmp.js'
+import { emailService } from '../services/email-services.js'
 //DATA MODEL:
 //gEmails = [];
 
@@ -14,7 +15,7 @@ export default {
             Main
         </div>
         <div class="main-app-container">
-            <email-list></email-list>
+            <email-list :mails = "mails"></email-list>
             Email - List
         </div>
         <div class="side-bar-container">
@@ -23,7 +24,15 @@ export default {
         </div>
     </section>
     `,
-    // components: {
-    //     emailList
-    // },
+    data() {
+        return {
+            mails: [],
+        }
+    },
+    created() {
+        this.mails = emailService.getMails();
+    },
+    components: {
+        emailList
+    },
 }
