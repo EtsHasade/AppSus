@@ -1,7 +1,6 @@
 'use strict';
 
 //create cmp of email list
-
 import emailPreview from './email-preview.cmp.js'
 
 export default {

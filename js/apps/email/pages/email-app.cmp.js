@@ -1,6 +1,6 @@
 'use strict';
 
-
+// import emailList from '../cmps/email-list.cmp'
 //DATA MODEL:
 //gEmails = [];
 
@@ -23,4 +23,7 @@ export default {
         </div>
     </section>
     `,
+    // components: {
+    //     emailList
+    // },
 }

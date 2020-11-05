@@ -14,14 +14,14 @@ export default {
            <div  class="flex space-between align-center ">
          
             <div>
-                {{mail.title}}
+                {{mail.subject}}
                 <div class="email-shows">
                     {{mail.from}}
                     <email-short-text :txtLimit="30" :txt="mail.subtitle"></email-short-text>
                 </div>
              </div>
             <div class="email-shows" >
-                    {{mail.time}}
+                    {{mail.body}}
                     {{mail.date}}
                     <button class="stars" @click.stop="starringMail" v-if="!mail.isStarred">&star;</button>
                     <button class="yellow-stars" @click.stop="starringMail" v-else>&starf;</button>
@@ -50,7 +50,7 @@ export default {
 
         },
         onDeleteMail() {
-            eventBus.$emit('Confirm', 'Are you sure you to delete?', this.deleteMail);
+            eventBus.$emit('Confirm', 'Are you sure you to delete this mail?', this.deleteMail);
         },
         selectedPreview() {
             this.selected = !this.selected;
