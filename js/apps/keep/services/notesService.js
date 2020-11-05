@@ -1,6 +1,7 @@
 'use strict';
 
 import { utilsService } from "../../../services/utils-service.js";
+import { storageService } from "../../../services/storage-service.cmp.js";
 
 export const notesService = {
     getNotes,
@@ -9,53 +10,7 @@ export const notesService = {
 }
 
 //DATA MODEL:
-const gNotsDefault = [
-    {
-        type: "noteText",
-        id: utilsService.makeId(),
-        isPinned: true,
-        info: {
-            label: 'I`m a dynamic cmp!',
-            txt: "Fullstack Me Baby!"
-        },
-        style: {}
-    },
-
-    {
-        type: "noteImg",
-        id: utilsService.makeId(),
-        info: {
-            url: "https://images.freeimages.com/images/large-previews/035/young-golden-retriever-1404848.jpg",
-            title: "Me playing Mi"
-        },
-        style: {
-            backgroundColor: "#00d"
-        }
-    },
-
-    {
-        type: "noteToDo",
-        id: utilsService.makeId(),
-        info: {
-            label: "How was it:",
-            todos: [
-                { txt: "Do that", doneAt: null },
-                { txt: "Do this", doneAt: 187111111 }
-            ]
-
-        }
-    },
-    {
-        type: "noteVidoe",
-        id: utilsService.makeId(),
-        info: {
-            label: "see that",
-            url: 'https://www.youtube.com/embed/tgbNymZ7vqY'
-        }
-    }
-];
-
-
+// const gNotsDefault = [
 
 const noteTypes = {
     noteEmpty: {
@@ -103,17 +58,19 @@ const noteTypes = {
     },
 }
 
-const gNotes = gNotsDefault;
+const NOTES_STORAGE_KEY = 'gNotes';
+const gNotes = loadNotes() || creatNotes();
+saveNotes()
 
 function creatNotes() {
-    gNotes.unshift(
+    return [
         createNote('noteText'),
         createNote('noteToDo'),
         createNote('noteImg'),
         createNote('noteVidoe')
-     );
+    ]
 }
-creatNotes()
+
 function getNotes() {
     return gNotes;
 }
@@ -198,4 +155,11 @@ function addNote(type) {
 
 
 
+function saveNotes(){
+    storageService.saveToStorage(NOTES_STORAGE_KEY,gNotes)
+}
+
+function loadNotes(){
+    return storageService.loadFromStorage(NOTES_STORAGE_KEY);
+}
 
