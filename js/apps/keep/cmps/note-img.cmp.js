@@ -5,8 +5,8 @@ export default {
     props: ['info'],
     template:`
         <section class="note-img">
-            <img contenteditable="true" :src="info.url" alt="">
             <h2 class="note-title" contenteditable="true":innerText="info.title">{{info.title}}</h2>
+            <img contenteditable="true" :src="info.url" alt="">
         </section>
     `
 }
