@@ -8,7 +8,6 @@ export default {
     template: `
     <section class="keep app-container">
         <div class="bar-container">
-            editBar
             <editor-bar></editor-bar>
         </div>
         <div class="main-app-container">

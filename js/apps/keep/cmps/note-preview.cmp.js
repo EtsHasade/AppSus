@@ -10,15 +10,18 @@ export default {
     name: 'notePreview',
     props: ['note'],
     template:`
-    <div class="note-preview-container">  
-        <component :is="note.type" class="note-preview" :info="note.info"></component>
-        <div class="actions-note-bar">
+    <section class="note-preview-container" :class="{'open-note': isSelected}" >  
+        <component :is="note.type" class="note-preview" :info="note.info" @click.native="isSelected = true"></component>
+        <div class="actions-note-bar" >
             <button>+img</button>
             <button>+text</button>
             <button>+todo</button>
             <button>+vidoe</button>
         </div>
-    </div>
+        <div>
+            <button v-if="isSelected" @click.prevent="saveNote">Save</button>   
+        </div>
+    </section>
     `,
     components:{
         noteText,
@@ -26,5 +29,16 @@ export default {
         noteToDo,
         noteVidoe,
         noteEmpty
+    },
+    data(){
+        return {
+            isSelected: false
+        }
+    },
+    methods:{
+        saveNote(){
+            this.isSelected = false;
+
+        }
     }
 }

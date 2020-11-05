@@ -2,6 +2,7 @@
 @import './fonts.css';
 
 /*------------------ import components -------------*/
+@import './home-page.css';
 @import './apps/keep/keep-main.css';
 @import './apps/email/email-main.css';
 

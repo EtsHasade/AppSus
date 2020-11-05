@@ -5,8 +5,8 @@ export default {
     props: ['info'],
     template:`
         <section>
-            <h2 class="note-title">{{info.label}}</h2>
-            <pre>{{info.txt}}</pre>
+            <h2 class="note-title" :innerText="info.label" contenteditable="true">{{info.label}}</h2>
+            <p :innerText="info.txt" contenteditable="true">{{info.txt}}</p>
         </section>
     `
 }

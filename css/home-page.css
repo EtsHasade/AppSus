@@ -1,9 +1,5 @@
-@import './cmp/notes-list.css';
-@import './cmp/note-preview.css';
-@import './cmp/note-img.css';
-@import './cmp/note-todo.css';
 
-.keep.app-container{
+.home-page.app-container{
     --editor-bar-height: 80px;
     --side-bar-width: 150px;
 
@@ -13,20 +9,31 @@
     height: 100%;
 }
 
-.keep .bar-container{
+.home-page .bar-container{
 background-color: var(--BG-labels);
 grid-column: 1/-1;
 
 }
 
-.keep .main-app-container{
+.home-page .main-app-container{
     background-color: var(--BG-main);
     grid-row: 2/3;
     grid-column: 1/2;
     
+    background-image: url(../assets/img/עיר\ בצבעי\ מיים4\ -\ ללא\ דיו\ חתום.png);
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-size: 50px;
+    color: #ffffff;
+    
 }
 
-.keep .side-bar-container{
+.home-page .side-bar-container{
     background-color: var(--BG-items);
     grid-row: 2/3;
     grid-column: 2/3;
