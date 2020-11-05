@@ -2,6 +2,7 @@
 import {notesService} from "../services/notesService.js";
 import notesList from '../cmps/notes-list.cmp.js';
 import editorBar from '../cmps/editor-bar.cmp.js';
+import {eventBus} from '../../../services/eventBus-service.js'
 
 export default {
     name: 'keepApp',
@@ -27,14 +28,16 @@ export default {
     computed:{
         notesToShow(){
             return this.notes
-        }
+        },
+        
     },
     components:{
         notesList,
         editorBar
     },
     created(){
-        this.notes = notesService.getNotes()
+        this.notes = notesService.getNotes();
+        eventBus.$on('saveNote', notesService.addOrUpdateNote)
     }
 }
 
