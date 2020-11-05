@@ -5,8 +5,8 @@ export default {
     props: ['info'],
     template:`
         <section class="note-todo">
-            <h2 class="note-title">{{info.label}}</h2>
-            <div class="todo" v-for="(todo, idx) in info.todos" :key="idx"><span>{{todo.txt}}</span><span>{{todo.doneAt}}</span></div>
+            <h2 class="note-title" contenteditable="true" :innerText="info.label">{{info.label}}</h2>
+            <div class="todo" v-for="(todo, idx) in info.todos" :key="idx" contenteditable="true"><span :innerText="todo.txt">{{todo.txt}}</span><span :innerText="todo.doneAt">{{todo.doneAt}}</span></div>
         </section>
     `
 }
