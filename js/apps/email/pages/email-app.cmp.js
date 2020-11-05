@@ -16,6 +16,7 @@ export default {
         </div>
         <div class="main-app-container">
             <email-list :mails = "mails"></email-list>
+            <router-view></router-view>
             Email - List
         </div>
         <div class="side-bar-container">
