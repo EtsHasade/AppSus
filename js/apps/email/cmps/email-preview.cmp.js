@@ -10,8 +10,7 @@ export default {
     props: ['mail'],
     template: `
         <li @click="selectedPreview" class="email-preview" :class="{ unReadMail: !mail.isread}">
-           <div class="mail-preview-details">
-         
+           <div class="mail-preview-details">  
                 <div>
                     <h4 class="email-shows" >
                         {{mail.from}}
