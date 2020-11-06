@@ -24,9 +24,12 @@ export default {
         reply() {
             eventBus.$emit('reply', this.mail)
             console.log(this.mail)
+                //open compose 
         },
         read() {
             eventBus.$emit('read', this.mail.id);
+            this.mail.isRead = true;
+
         },
         onDeleteMail() {
             eventBus.$emit('Confirm', 'Are you sure you to delete this mail?', this.deleteMail());
