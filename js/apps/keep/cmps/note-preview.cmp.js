@@ -14,7 +14,7 @@ export default {
     name: 'notePreview',
     props: ['note'],
     template:`
-    <section class="note-preview-container" :class="{'open-note': isSelected}" :style='note.style'>  
+    <section  class="note-preview-container" :class="{'open-note': isSelected, }" :style='note.style'>  
         <component :is="note.type" class="note-preview" :class="{pinned: note.isPinned}" :note="note" @click.native="isSelected = true"></component>
         <note-menu-bar :note="note"></note-menu-bar>
     </section>
@@ -29,7 +29,8 @@ export default {
     },
     data(){
         return {
-            isSelected: false
+            isSelected: false,
+            isHover: false
         }
     },
     methods:{

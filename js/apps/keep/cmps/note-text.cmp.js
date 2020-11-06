@@ -2,20 +2,27 @@
 
 // import { notesService } from "../services/notesService.js";
 import { eventBus } from '../../../services/eventBus-service.js';
+// import noteMenuBar from './note-menu-bar.cmp.js';
 
 
 export default {
     name: 'noteText',
     props: ['note'],
     template: `
-        <section>
+        <section @mouseover="isHover = true" @mouseout="isHover = false">
             <h2 ref="label" name="label" @blur="onSaveTxt('label')" class="note-title" contenteditable="true">{{info.label}}</h2>
-            <p  ref="txt"  name="txt" @blur="onSaveTxt('txt')" contenteditable="true">{{info.txt}}</p>
+            <!-- <p  ref="txt"  name="txt" @blur="onSaveTxt('txt')" contenteditable="true">{{info.txt}}</p> -->
+            <textarea ref="txt"  name="txt" @input="emitSaveNoteChanges" v-model:value="info.txt" cols="30" rows="10"></textarea>
+            <!-- <note-menu-bar  :note="note"></note-menu-bar> -->
         </section>
     `,
+    component:{
+        // noteMenuBar
+    },
     data() {
         return {
-            info: null
+            info: null,
+            isHover: false
         }
     },
     created() {

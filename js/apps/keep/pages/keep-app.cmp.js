@@ -2,6 +2,7 @@
 import {notesService} from "../services/notesService.js";
 import notesList from '../cmps/notes-list.cmp.js';
 import editorBar from '../cmps/editor-bar.cmp.js';
+import editorBar2 from '../cmps/editor-bar2.cmp.js';
 import {eventBus} from '../../../services/eventBus-service.js'
 
 export default {
@@ -9,7 +10,7 @@ export default {
     template: `
     <section class="keep app-container">
         <div class="bar-container">
-            <editor-bar></editor-bar>
+            <editor-bar2></editor-bar2>
         </div>
         <div class="main-app-container">
             <notes-list :notes="notesToShow"></notes-list>
@@ -33,7 +34,7 @@ export default {
     },
     components:{
         notesList,
-        editorBar
+        editorBar2
     },
     created(){
         this.notes = notesService.getNotes();

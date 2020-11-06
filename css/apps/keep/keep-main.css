@@ -3,6 +3,7 @@
 @import './cmp/note-img.css';
 @import './cmp/note-todo.css';
 @import './cmp/note-vidoe.css';
+@import './cmp/long-url.css';
 
 .keep.app-container{
     --editor-bar-height: 80px;

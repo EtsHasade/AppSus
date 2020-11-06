@@ -21,7 +21,7 @@ const noteTypes = {
         },
         isPinned: false,
         style: {
-            backgroundColor: 'var(--BG-items)'
+            backgroundColor: '#ececec' // hard copy of 'var(--BG-items)'.
         },
         children: []
     },

@@ -1,6 +1,6 @@
 'use strict';
 import {eventBus} from '../../../services/eventBus-service.js';
-import longTxt from '../../../cmps/long-text.cmp.js'
+import longUrl from '../cmps/long-url.cmp.js';
 
 
 export default {
@@ -10,7 +10,7 @@ export default {
         <section class="note-img">
             <h2 class="note-title" ref="title" name="title" @blur="onSaveTxt('title')" contenteditable="true" :innerText="info.title">{{info.title}}</h2>
             <img contenteditable="true" :src="info.url" alt="">
-            <long-txt class="note-url" :txt="info.url" initLength="20" contenteditable="true"  ref="url" name="url" @blur="onSaveTxt('url')"></long-txt>
+            <long-url class="note-url" :txt="info.url" initLength="20" contenteditable="true"  ref="url" name="url" @blur="onSaveTxt('url')"></long-url>
         </section>
     `,
     data() {
@@ -34,7 +34,7 @@ export default {
         }
     },
     components: {
-        longTxt
+        longUrl
     }
 }
 

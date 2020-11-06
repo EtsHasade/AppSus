@@ -10,10 +10,11 @@ export default {
     <section class="note-menu-bar">  
             <!-- <button >Shere</button> -->
             <button @click="deleteNote">Delete</button>
-            <button @click="pinningNote">Pin it</button>
+            <button @click="pinningNote">{{(note.isPinned)? 'unPin':'Pin it'}}</button>
 
             <label class="color-picker-label">
-                <input type="color" class="color-picker" @input="chouseColor" v-model:value="BGColor">
+                <input type="color" class="color-picker" @input="chouseColor" v-model:value="BGColor" >
+                <!-- 🎨 -->
             </label>
     </section>
     `,
@@ -25,7 +26,7 @@ export default {
         }
     },
     created(){
-
+        this.BGColor = this.note.style.backgroundColor
     },
     methods: {
         deleteNote() {
