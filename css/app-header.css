@@ -1,0 +1,17 @@
+
+
+.header-app{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(102, 102, 102);
+}
+
+.header-app *{
+    height: 60px;
+    margin: 0 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}

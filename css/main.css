@@ -3,6 +3,7 @@
 
 /*------------------ import components -------------*/
 @import './home-page.css';
+@import './app-header.css';
 @import './apps/keep/keep-main.css';
 @import './apps/email/email-main.css';
 
