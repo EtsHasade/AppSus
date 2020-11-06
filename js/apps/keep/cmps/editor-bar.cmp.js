@@ -8,7 +8,7 @@ export default {
     name: 'editorBar',
     template: `
         <section class="notes-list-container">
-            <note-preview class="editor-bar-note" v-if="noteEmpty" :note="noteEmpty"></note-preview>
+            <!-- <note-preview class="editor-bar-note" v-if="noteEmpty" :note="noteEmpty"></note-preview> -->
         </section>
     `,
     components: {

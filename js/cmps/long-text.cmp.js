@@ -4,7 +4,7 @@ export default {
     props: ["txt","initLength"],
     template: `
     <section class="mr-5">
-      <p>{{textToShow}}</p>
+      <pre>{{textToShow}}</pre>
       <button @click.stop="isShowAll = !isShowAll">{{buttonTxt}}</button>
     </section>
     `,

@@ -4,21 +4,19 @@ import noteImg from './note-img.cmp.js';
 import noteToDo from './note-todo.cmp.js';
 import noteVidoe from './note-vidoe.cmp.js';
 import noteEmpty from './note-empty.cmp.js';
+import noteMenuBar from './note-menu-bar.cmp.js';
+
 import {eventBus} from '../../../services/eventBus-service.js'
+import { notesService } from '../services/notesService.js';
 
 
 export default {
     name: 'notePreview',
     props: ['note'],
     template:`
-    <section class="note-preview-container" :class="{'open-note': isSelected}" >  
-        <component :is="note.type" class="note-preview" @saveNote="" :note="note" @click.native="isSelected = true"></component>
-        <div class="actions-note-bar" >
-            <button>+img</button>
-            <button>+text</button>
-            <button>+todo</button>
-            <button>+vidoe</button>
-        </div>
+    <section class="note-preview-container" :class="{'open-note': isSelected}" :style='note.style'>  
+        <component :is="note.type" class="note-preview" :note="note" @click.native="isSelected = true"></component>
+        <note-menu-bar :note="note"></note-menu-bar>
     </section>
     `,
     components:{
@@ -26,12 +24,15 @@ export default {
         noteImg,
         noteToDo,
         noteVidoe,
-        noteEmpty
+        noteEmpty,
+        noteMenuBar
     },
     data(){
         return {
             isSelected: false
         }
     },
+    methods:{
+    }
 
 }

@@ -1,5 +1,6 @@
 'use strict';
 import {eventBus} from '../../../services/eventBus-service.js'
+import longTxt from '../../../cmps/long-text.cmp.js'
 
 
 export default {
@@ -12,6 +13,9 @@ export default {
             <long-txt :txt="info.url" initLength="20" contenteditable="true" class="note-url" ref="url" name="url" @blur="onSaveTxt('url')"></long-txt>
         </section>
     `,
+    components:{
+        longTxt
+    },
     data(){
         return{
             width: '100%',

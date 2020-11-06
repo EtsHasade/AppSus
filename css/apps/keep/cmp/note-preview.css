@@ -36,7 +36,7 @@
 }
 
 
-.open-note {
+/* .open-note {
     position: absolute;
     width: 80vw;
     height: 50vh;
@@ -56,4 +56,4 @@
     background: var(--BG-labels);
     border-top-right-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
-}
+} */

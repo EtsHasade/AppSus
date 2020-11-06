@@ -1,7 +1,8 @@
 'use strict';
 
 // import { notesService } from "../services/notesService.js";
-import {eventBus} from '../../../services/eventBus-service.js'
+import { eventBus } from '../../../services/eventBus-service.js';
+
 
 export default {
     name: 'noteText',
@@ -10,33 +11,30 @@ export default {
         <section>
             <h2 ref="label" name="label" @blur="onSaveTxt('label')" class="note-title" contenteditable="true">{{info.label}}</h2>
             <p  ref="txt"  name="txt" @blur="onSaveTxt('txt')" contenteditable="true">{{info.txt}}</p>
-            <div>
-                <button @click.prevent="saveNote">Save</button>   
-            </div>
         </section>
     `,
-    data(){
-        return{
+    data() {
+        return {
             info: null
         }
     },
-    created(){
+    created() {
         this.info = this.note.info
     },
     methods: {
         saveNote() {
             this.$emit('saveNote', this.info)
         },
-        emitSaveNoteChanges(){
+        emitSaveNoteChanges() {
             console.log('text: this.note', this.note);
             eventBus.$emit('saveNote', this.note)
         },
-        onSaveTxt(fildName){
+        onSaveTxt(fildName) {
             const elItem = this.$refs[fildName];
-            console.log('elItem',elItem, 'refs',this.$refs[fildName]); 
+            console.log('elItem', elItem, 'refs', this.$refs[fildName]);
             this.note.info[fildName] = elItem.innerText;
-            this.emitSaveNoteChanges()     
-            
+            this.emitSaveNoteChanges()
+
         }
     }
 }

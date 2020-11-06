@@ -22,12 +22,13 @@ const noteTypes = {
         isPinned: false,
         style: {
             backgroundColor: 'var(--BG-items)'
-        }
+        },
+        children: []
     },
     noteText: {
         type: 'noteText',
         info: {
-            txt: "your msg...",
+            txt: `your msg...`,
             label: "Add note...",
         }
     },
