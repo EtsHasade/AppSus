@@ -10,6 +10,8 @@ export default {
     <section class="note-menu-bar">  
             <!-- <button >Shere</button> -->
             <button @click="deleteNote">Delete</button>
+            <button @click="pinningNote">Pin it</button>
+
             <label class="color-picker-label">
                 <input type="color" class="color-picker" @input="chouseColor" v-model:value="BGColor">
             </label>
@@ -35,6 +37,11 @@ export default {
         },
         chouseColor() {
             this.note.style.backgroundColor = this.BGColor;
+            this.emitSaveNoteChanges()
+        },
+        pinningNote() {
+            this.note.isPinned = !this.note.isPinned;
+            this.note.style.order = (this.note.isPinned)? -999 : 0;
             this.emitSaveNoteChanges()
         }
     }

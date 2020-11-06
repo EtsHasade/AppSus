@@ -37,7 +37,11 @@ export default {
     },
     created(){
         this.notes = notesService.getNotes();
-        eventBus.$on('saveNote', notesService.addOrUpdateNote)
+        
+        eventBus.$on('saveNote',(evValue) =>{
+            notesService.addOrUpdateNote(evValue);
+             this.notes = notesService.getNotes();
+        })
     }
 }
 
