@@ -10,16 +10,22 @@ export default {
     template: `
         <section class="email-compose">
             <div>new email messege</div>
-            <form @submit.prevent="submiton">
-                <input type="text" placeholder="To:" v-model:value="compose.to" > 
-                <input type="text" placeholder="Subject:" v-model:value="compose.subject">
-                <textarea class="compose-body" rows="6" cols="50" placeholder="email-text:" v-model:value="compose.body"></textarea>
-                <input type="submit" value="Send mail">
-                <button>
+            <!-- <form @submit.prevent="submiton"> -->
+            <form>
+                <div class="mail-to-subject">
+                    <input type="text" placeholder="To:" v-model:value="compose.to" > 
+                    <input type="text" placeholder="Subject:" v-model:value="compose.subject">
+                </div>
+                <div class="mail-compose-body">
+                    <textarea class="compose-body" rows="6" cols="50" placeholder="email-text:" v-model:value="compose.body"></textarea>
+                </div>
+                    <!-- <input type="submit" value="Send mail"> -->
+                <div @click="submiton" class="btn send-mail">
+                 <router-link to="/email">Send mail</router-link>
+                </div>
+                <div class="btn go-back">
                  <router-link to="/email">Go back</router-link>
-                </button>
-
-                
+                </div>
             </form>
         </section> 
     `,
@@ -39,7 +45,7 @@ export default {
         }
     },
     created() {
-        if (email) this.compose = email;
+        // if (email) this.compose = email;
         // this.compose = this.$route.params
         this.compose.id = utilsService.makeId();
         console.log('email id:', this.compose.id);
@@ -56,6 +62,7 @@ export default {
             this.compose.date = utilsService.getDate();
             console.log(this.compose)
             emailService.addMail(this.compose)
+
         },
 
     },
