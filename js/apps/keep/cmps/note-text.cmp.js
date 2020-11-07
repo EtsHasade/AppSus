@@ -9,10 +9,10 @@ export default {
     name: 'noteText',
     props: ['note'],
     template: `
-        <section @mouseover="isHover = true" @mouseout="isHover = false">
+        <section class="note-text" @mouseover="isHover = true" @mouseout="isHover = false">
             <h2 ref="label" name="label" @blur="onSaveTxt('label')" class="note-title" contenteditable="true">{{info.label}}</h2>
             <!-- <p  ref="txt"  name="txt" @blur="onSaveTxt('txt')" contenteditable="true">{{info.txt}}</p> -->
-            <textarea ref="txt"  name="txt" @input="emitSaveNoteChanges" v-model:value="info.txt" cols="30" rows="10"></textarea>
+            <textarea class="main-txt" ref="txt"  name="txt" @input="emitSaveNoteChanges" v-model:value="info.txt" cols="30" rows="10"></textarea>
             <!-- <note-menu-bar  :note="note"></note-menu-bar> -->
         </section>
     `,

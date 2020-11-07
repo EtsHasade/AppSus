@@ -13,7 +13,8 @@ export default {
     template: `
         <section class="header-app">
             <div class="logo">
-                <h1 class="logo"><router-link to="/">Home-Page</router-link></h1>
+                <img src="assets/img/סמליל AppSus.svg" alt="">
+                <h1 class="logo"><router-link to="/">^ppSus</router-link></h1>
             </div>
             <nav class="main-nav">
                 <!-- <router-link to="/">Home page</router-link> -->

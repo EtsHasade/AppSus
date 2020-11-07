@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(102, 102, 102);
+    background-color: rgb(41, 41, 41);
 }
 
 .header-app *{
@@ -14,4 +14,17 @@
     justify-content: space-between;
     align-items: center;
     color: #fff;
+    box-sizing: unset;
+    font-size: 110%;
+}
+.header-app a:hover{
+    color: var(--color-txt);
+    transition: 0.1s;
+}
+
+.logo{
+    font-family: Hind-SemiBold, sans-serif;
+    font-size: larger;
+    border-radius: 20px;
+
 }
