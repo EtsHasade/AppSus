@@ -15,10 +15,9 @@ export default {
         <div class="main-app-container">
             <notes-list :notes="notesToShow"></notes-list>
         </div>
-        <div class="side-bar-container">
+        <!-- <div class="side-bar-container">
             filterNav
-            <!-- <filter-nav></filter-nav> -->
-        </div>
+        </div> -->
     </section>
     `,
     data(){

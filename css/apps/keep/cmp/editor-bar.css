@@ -1,0 +1,13 @@
+
+.editor-bar {
+    padding:5px;
+    display: flex;
+    align-items: center;
+}
+
+
+.action-btns-container *{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}

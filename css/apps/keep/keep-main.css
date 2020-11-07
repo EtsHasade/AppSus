@@ -4,9 +4,10 @@
 @import './cmp/note-todo.css';
 @import './cmp/note-vidoe.css';
 @import './cmp/long-url.css';
+@import './cmp/editor-bar.css';
 
 .keep * {
-    transition: 0.3s;
+    transition: 0.1s;
 }
 .keep.app-container{
     --editor-bar-height: 80px;
@@ -17,6 +18,10 @@
     width: 100%;
     height: 100%;
     overflow: scroll;
+
+    /*-----whith out filter nav----- */
+    grid-template: 80px  1fr / 1fr;
+
 }
 
 .keep .bar-container{

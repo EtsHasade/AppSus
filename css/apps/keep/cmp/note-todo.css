@@ -1,7 +1,17 @@
 
+
+.todos-container {
+    padding: 5px;
+}
+
 .todo-line{
     display: flex;
 }
-.todo-line.done *{
+
+.todo-line.done .todo-txt{
     text-decoration: line-through;
+}
+
+.todo-line .todo-txt:hover{
+    font-family: Hind-SemiBold;
 }

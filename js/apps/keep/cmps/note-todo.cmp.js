@@ -8,12 +8,16 @@ export default {
     template:`
         <section class="note-todo">
             <h2 class="note-title" contenteditable="true" :innerText="info.label">{{info.label}}</h2>
-            <div class="todo-line" v-for="(todo, idx) in info.todos" :key="idx" :class="{done: note.info.todos[idx].isDone}" :ref="idx">
-                <div @click="clickTodo(idx)"  v-if="!note.info.todos[idx].isDone">⚪</div>
-                <div @click="clickTodo(idx)" v-if="note.info.todos[idx].isDone">🟢</div>
-                <div contenteditable="true" name="txt" @blur="onSaveTxt(idx, 'txt')" >{{todo.txt}}</div>
-                <div contenteditable="true" name="doneAt" @blur="onSaveTxt(idx, 'doneAt')" >{{todo.doneAt}}</div>
+            <div class="todos-container">
+                <div class="todo-line" v-for="(todo, idx) in info.todos" :key="idx" :class="{done: note.info.todos[idx].isDone}" :ref="idx">
+                    <div @click="deleteTodo(idx)">x</div>
+                    <div @click="clickTodo(idx)"  v-if="!note.info.todos[idx].isDone">⚪</div>
+                    <div @click="clickTodo(idx)" v-if="note.info.todos[idx].isDone">🟢</div>
+                    <div class="todo-txt" contenteditable="true" name="txt" @blur="onSaveTxt(idx, 'txt')" >{{todo.txt}}</div>
+                    <!-- <div class="todo-txt" contenteditable="true" name="doneAt" @blur="onSaveTxt(idx, 'doneAt')" >{{todo.doneAt}}</div> -->
+                </div>
             </div>
+            <button @click="addTodo">+ToDo</button>
         </section>
     `,
         data(){
@@ -43,6 +47,15 @@ export default {
             
             console.log('elTodo',elTodo, this.$refs[todoIdx][0]);     
             this.emitSaveNoteChanges()     
+        },
+        addTodo(){
+            this.note.info.todos.push({ txt: "Do that", isDone: false, doneAt: null })
+            this.emitSaveNoteChanges() 
+        },
+        deleteTodo(idx){
+            this.note.info.todos.splice(idx,1);
+            this.emitSaveNoteChanges() ;
+            
         }
     }
 }

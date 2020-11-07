@@ -16,16 +16,17 @@
     grid-row: 2/3;
     grid-column: 1/2;
     
-    background-image: url(../assets/img/עיר\ בצבעי\ מיים4\ -\ ללא\ דיו\ חתום.png);
+    background-image: url(../assets/img/BG-Home-page.jpeg);
     background-size: cover;
     background-position: center;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 
     font-size: 50px;
-    color: #ffffff;
+    color: #000000;
     
 }
 

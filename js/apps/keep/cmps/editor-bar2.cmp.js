@@ -7,9 +7,9 @@ import {eventBus} from '../../../services/eventBus-service.js'
 export default {
     name: 'editorBar2',
     template: `
-        <section class="notes-list-container">
+        <section class="editor-bar">
             <div class="action-btns-container">
-                <button @click="addNote('noteText')" >Enter text note...</button>
+                <button @click="addNote('noteText')" >Text</button>
                 <button @click="addNote('noteToDo')" >ToDo</button>
                 <button @click="addNote('noteImg')" >Image</button>
                 <button @click="addNote('noteVidoe')" >Vidoe</button>
