@@ -13,8 +13,8 @@
     justify-content: space-between;
 }
 
-.mail-preview-details:hover {
-    background-color: rgb(248, 203, 185);
+.email-preview:hover {
+    background-color: rgb(253, 236, 230);
 }
 
 .mail-perview-btns {

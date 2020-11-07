@@ -39,6 +39,8 @@ export default {
         }
     },
     created() {
+        if (email) this.compose = email;
+        // this.compose = this.$route.params
         this.compose.id = utilsService.makeId();
         console.log('email id:', this.compose.id);
         eventBus.$on('email-sent', (email) => {

@@ -44,7 +44,7 @@ export default {
             eventBus.$emit('read', this.mail.id);
         },
         onDeleteMail() {
-            eventBus.$emit('Confirm', 'Are you sure you to delete this mail?', this.deleteMail());
+            eventBus.$emit('Confirm', 'Are you sure to delete this mail?', this.deleteMail());
 
         },
         onRemindMail() {
@@ -63,7 +63,7 @@ export default {
             console.log('remind Mail by id:', this.mail.id)
         },
         starringMail() {
-            eventBus.$emit('starring', this.mail.id);
+            eventBus.$emit('marking mail', this.mail.id);
         },
         makeNote() {
             // conect to note app
