@@ -25,8 +25,8 @@ export default {
                 </div>
             </div>
             <div class="mail-perview-btns" v-if="selected">
-                <button @click="onDeleteMail">🗑️<i class="fas fa-trash-alt"></i></button>
-                <button @click="onRemindMail">⏲️<i class="fas fa-business-time"></i></button>
+                <button @click="onDeleteMail"><i class="fas fa-trash-alt"></i></button>
+                <button @click="onRemindMail"><i class="fas fa-business-time"></i></button>
                 <!-- <button @click="makeNote"><i class="far fa-clipboard"></i></button> -->
                 <!-- add: ^^remind me later^^ + open new page with the mail -->
                 <!-- <router-link :to="'________'+mail.id"><button @click="read"> <i class="fas fa-envelope-open"></i> </button></router-link> -->
