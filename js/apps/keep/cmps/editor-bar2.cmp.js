@@ -2,6 +2,7 @@
 
 import { notesService } from "../services/notesService.js";
 import {eventBus} from '../../../services/eventBus-service.js'
+import composeNote from './compose-note.cmp.js'
 
 
 export default {
@@ -9,16 +10,16 @@ export default {
     template: `
         <section class="editor-bar">
             <div class="action-btns-container">
-                <button class="btn" @click="addNote('noteText')" >Text</button>
-                <button class="btn" @click="addNote('noteToDo')" >ToDo</button>
-                <button class="btn" @click="addNote('noteImg')" >Image</button>
-                <button class="btn" @click="addNote('noteVidoe')" >Vidoe</button>
+                <button class="btn txt" @click="addNote('noteText')" >+<i class="fas fa-sticky-note"></i></button>
+                <button class="btn todo" @click="addNote('noteToDo')" >+<i class="fas fa-list-alt"></i></button>
+                <button class="btn" @click="addNote('noteImg')" >+<i class="fas fa-file-image"></i></button>
+                <!-- <button class="btn" @click="addNote('noteVidoe')" >+<i class="fas fa-file-video"></i></button> -->
             </div>
-            
+            <compose-note v-if="newNote" :type="newNote"></compose-note>            
         </section>
     `,
     components: {
-
+        composeNote
     },
     data() {
         return {
@@ -31,7 +32,7 @@ export default {
            console.log("addNote -> this.newNote", this.newNote)
            
            this.newNote.info.label = 'your msg';
-           this.emitSaveNoteChanges()
+        //    this.emitSaveNoteChanges()
         },
         emitSaveNoteChanges() {
             console.log('text: this.note', this.newNote);

@@ -29,7 +29,7 @@ const noteTypes = {
         type: 'noteText',
         info: {
             txt: `your msg...`,
-            label: "Add note...",
+            label: "My title...",
         }
     },
     noteImg: {
@@ -50,14 +50,14 @@ const noteTypes = {
             ,label: "ToDo list",
         }
     },
-    noteVidoe: {
-        type: 'noteVidoe',
-        info: {
-            url: 'https://www.youtube.com/embed/tgbNymZ7vqY',
-            title: "My vidoe",
-            label: "My vidoe",
-        }
-    },
+    // noteVidoe: {
+    //     type: 'noteVidoe',
+    //     info: {
+    //         url: 'https://www.youtube.com/embed/FgvjjYBP2A0?list=PL4cUxeGkcC9gQcYgjhBoeQH7wiAyZNrYa',
+    //         title: "My vidoe",
+    //         label: "My vidoe",
+    //     }
+    // },
 }
 
 const NOTES_STORAGE_KEY = 'gNotes';
@@ -69,7 +69,7 @@ function creatNotes() {
         createNote('noteText'),
         createNote('noteToDo'),
         createNote('noteImg'),
-        createNote('noteVidoe')
+        // createNote('noteVidoe')
     ]
 }
 

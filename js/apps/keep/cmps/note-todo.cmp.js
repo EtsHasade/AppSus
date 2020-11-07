@@ -8,16 +8,18 @@ export default {
     template:`
         <section class="note-todo">
             <h2 class="note-title" contenteditable="true" :innerText="info.label">{{info.label}}</h2>
-            <div class="todos-container">
+            <div class="todos-container"  style="align-items: flex-start">
                 <div class="todo-line" v-for="(todo, idx) in info.todos" :key="idx" :class="{done: note.info.todos[idx].isDone}" :ref="idx">
-                    <div @click="deleteTodo(idx)">x</div>
-                    <div @click="clickTodo(idx)"  v-if="!note.info.todos[idx].isDone">⚪</div>
-                    <div @click="clickTodo(idx)" v-if="note.info.todos[idx].isDone">🟢</div>
+                    <div @click="deleteTodo(idx)"><i class="far fa-trash-alt"></i></div>
+                    <div @click="clickTodo(idx)"  v-if="!note.info.todos[idx].isDone"><i class="far fa-square"></i></div>
+                    <div @click="clickTodo(idx)" v-if="note.info.todos[idx].isDone"><i class="fas fa-check-square"></i></div>
                     <div class="todo-txt" contenteditable="true" name="txt" @blur="onSaveTxt(idx, 'txt')" >{{todo.txt}}</div>
                     <!-- <div class="todo-txt" contenteditable="true" name="doneAt" @blur="onSaveTxt(idx, 'doneAt')" >{{todo.doneAt}}</div> -->
                 </div>
+                <div class="add-todo">
+                    <button class="btn add" @click="addTodo"><i class="far fa-plus-square"></i></button>
+                </div>
             </div>
-            <button @click="addTodo">+ToDo</button>
         </section>
     `,
         data(){

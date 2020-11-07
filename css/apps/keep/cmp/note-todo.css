@@ -6,6 +6,15 @@
 
 .todo-line{
     display: flex;
+    align-items: flex-start;
+}
+
+.todo-line * {
+    margin-right: 3px;
+}
+
+.todo-line .todo-txt{
+    text-align: start;
 }
 
 .todo-line.done .todo-txt{
@@ -15,3 +24,17 @@
 .todo-line .todo-txt:hover{
     font-family: Hind-SemiBold;
 }
+
+.btn.add{
+    padding: 1px;
+    font-weight: bold;
+    color: var(--color-txt);
+}
+.add-todo{
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+}
+
+
+

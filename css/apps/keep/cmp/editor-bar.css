@@ -10,5 +10,17 @@
     display:flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.action-btns-container *{
+    font-size: 132%;
+}
+
+.action-btns-container *.txt{
+    font-size: 125%;
+}
+
+.action-btns-container *.todo{
+    font-size: 112%;
 }
