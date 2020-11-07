@@ -1,10 +1,16 @@
 @import './cmp/email-preview.css';
+@import './cmp/email-compose.css';
+
 /* .email.app-container {
     --editor-bar-height: 80px;
     --side-bar-width: 150px;
     display: grid; */
-    /* grid-template: var(--editor-bar-height) 1fr / var(--side-bar-width) 1fr; */
-    /* width: 100%;
+
+
+/* grid-template: var(--editor-bar-height) 1fr / var(--side-bar-width) 1fr; */
+
+
+/* width: 100%;
     height: 100%;
     
     
@@ -28,28 +34,23 @@
     grid-column: 1/2;
 } */
 
-
-.email.app-container{
+.email.app-container {
     --editor-bar-height: 80px;
     --side-bar-width: 150px;
-
     display: grid;
-    grid-template: 1fr /  var(--side-bar-width) 1fr;
+    grid-template: 1fr / var(--side-bar-width) 1fr;
     width: 100%;
     height: 100%;
     overflow: scroll;
-
-
 }
 
-.email .main-app-container{
+.email .main-app-container {
     background-color: var(--BG-main);
     grid-row-start: 1;
     grid-column: 2/3;
-    
 }
 
-.email .side-bar-container{
+.email .side-bar-container {
     background-color: var(--BG-items);
     grid-row-start: 1;
     grid-column: 1/2;
@@ -58,8 +59,6 @@
     height: 100%;
     padding: 1em;
 }
-
-
 
 .fa {
     border-radius: 1px;

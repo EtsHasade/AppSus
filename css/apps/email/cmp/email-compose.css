@@ -1,0 +1,12 @@
+.email-compose {
+    display: flex;
+}
+
+.btn {
+    width: 80px;
+    height: 30px;
+    border: solid 1.5px black;
+    /* border-radius: 2px; */
+    padding: 3px;
+    margin: 5px;
+}

@@ -14,7 +14,7 @@ export default {
             <router-view></router-view>
         </div>
         <div class="side-bar-container">
-            <editor-bar></editor-bar>
+            <!-- <editor-bar></editor-bar> -->
             <!-- <filter-nav></filter-nav> -->
             fillter--email
         </div>
