@@ -35,6 +35,7 @@ export default {
                 date: '',
                 isTrash: false,
                 isFavorie: false,
+                isStarred: false
             },
         }
     },

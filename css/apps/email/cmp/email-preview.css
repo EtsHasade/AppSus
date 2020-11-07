@@ -28,3 +28,8 @@
     display: inline-block;
     margin: 0 1em;
 }
+
+.stars,
+.yellow-stars {
+    display: inline-block;
+}

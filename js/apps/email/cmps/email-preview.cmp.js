@@ -20,13 +20,15 @@ export default {
                     <long-text :txtLimit="100" :txt="mail.body"></long-text>
                     <!-- {{mail.body}} -->
                     {{mail.date}}
-                    <button class="stars" @click.stop="starringMail" v-if="!mail.isStarred">&star;</button>
-                    <button class="yellow-stars" @click.stop="starringMail" v-else>&starf;</button>
+                    <!-- <button class="stars" @click.stop="starringMail" v-if="!mail.isStarred">&star;</button>
+                    <button class="yellow-stars" @click.stop="starringMail" v-else>&starf;</button> -->
+                    <div class="stars" @click.stop="starringMail" v-if="!mail.isStarred"><i class="far fa-star"></i></div>
+                    <div class="yellow-stars" @click.stop="starringMail" v-else><i class="fas fa-star"></i></div>
                 </div>
             </div>
             <div class="mail-perview-btns" v-if="selected">
-                <button @click="onDeleteMail"><i class="fas fa-trash-alt"></i></button>
-                <button @click="onRemindMail"><i class="fas fa-business-time"></i></button>
+                <div @click="onDeleteMail"><i class="fas fa-trash-alt"></i></div>
+                <div @click="onRemindMail"><i class="fas fa-business-time"></i></div>
                 <!-- <button @click="makeNote"><i class="far fa-clipboard"></i></button> -->
                 <!-- add: ^^remind me later^^ + open new page with the mail -->
                 <!-- <router-link :to="'________'+mail.id"><button @click="read"> <i class="fas fa-envelope-open"></i> </button></router-link> -->
@@ -64,6 +66,7 @@ export default {
         },
         starringMail() {
             eventBus.$emit('marking mail', this.mail.id);
+            mail.isStarred = !mail.isStarred;
         },
         makeNote() {
             // conect to note app
