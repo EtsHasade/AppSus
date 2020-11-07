@@ -25,6 +25,7 @@ export default {
                     <div class="stars" @click.stop="starringMail" v-if="!mail.isStarred"><i class="far fa-star"></i></div>
                     <div class="yellow-stars" @click.stop="starringMail" v-else><i class="fas fa-star"></i></div>
                 </div>
+               
             </div>
             <div class="mail-perview-btns" v-if="selected">
                 <div @click="onDeleteMail"><i class="fas fa-trash-alt"></i></div>
@@ -66,7 +67,9 @@ export default {
         },
         starringMail() {
             eventBus.$emit('marking mail', this.mail.id);
-            mail.isStarred = !mail.isStarred;
+            console.log('star befor: ', this.mail.isStarred);
+            this.mail.isStarred = !this.mail.isStarred;
+            console.log('star after: ', this.mail.isStarred);
         },
         makeNote() {
             // conect to note app
