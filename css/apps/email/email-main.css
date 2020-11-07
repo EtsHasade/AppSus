@@ -3,7 +3,7 @@
     --editor-bar-height: 80px;
     --side-bar-width: 150px;
     display: grid;
-    grid-template: var(--editor-bar-height) 1fr /  var(--side-bar-width) 1fr;
+    grid-template: var(--editor-bar-height) 1fr / var(--side-bar-width) 1fr;
     width: 100%;
     height: 100%;
 }
@@ -23,4 +23,8 @@
     background-color: var(--BG-items);
     grid-row: 2/3;
     grid-column: 1/2;
+}
+
+.fa {
+    border-radius: 1px;
 }
