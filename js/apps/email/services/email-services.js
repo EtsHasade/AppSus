@@ -22,7 +22,7 @@ const baseEmails = [{
         from: 'muki',
         date: utilsService.getDate(),
         isTrash: false,
-        isFavorie: true,
+        isStarred: false
     },
     {
         id: utilsService.makeId(),
@@ -33,7 +33,8 @@ const baseEmails = [{
         from: 'puki',
         date: utilsService.getDate(),
         isTrash: false,
-        isFavorie: false,
+        isStarred: false
+
     },
     {
         id: utilsService.makeId(),
@@ -44,7 +45,8 @@ const baseEmails = [{
         from: 'suki',
         date: utilsService.getDate(),
         isTrash: false,
-        isFavorie: false,
+        isStarred: false
+
     },
     {
         id: utilsService.makeId(),
@@ -55,7 +57,7 @@ const baseEmails = [{
         from: 'dudi',
         date: utilsService.getDate(),
         isTrash: false,
-        isFavorie: false,
+        isStarred: false
     },
 ]
 var gMails = baseEmails;
@@ -81,7 +83,7 @@ function addMail(newMail) {
         from: newMail.from,
         date: newMail.date,
         isTrash: false,
-        isFavorie: false,
+        isStarred: false
     }
     gMails.unshift(addNewMail);
     //sotre in sotrge

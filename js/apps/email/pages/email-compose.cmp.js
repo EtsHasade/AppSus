@@ -34,7 +34,7 @@ export default {
                 from: 'userName',
                 date: '',
                 isTrash: false,
-                isFavorie: false,
+                isStarred: false
             },
         }
     },
