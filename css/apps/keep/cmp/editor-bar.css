@@ -1,13 +1,14 @@
-
+/* 
 .editor-bar {
     padding:5px;
     display: flex;
     align-items: center;
-}
+} */
 
 
-.action-btns-container *{
-    display: inline-block;
+.action-btns-container{
+    display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

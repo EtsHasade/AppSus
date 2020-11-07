@@ -9,15 +9,15 @@ export default {
     name: 'keepApp',
     template: `
     <section class="keep app-container">
-        <div class="bar-container">
-            <editor-bar2></editor-bar2>
-        </div>
+        <!-- <div class="bar-container">
+         
+        </div> -->
         <div class="main-app-container">
             <notes-list :notes="notesToShow"></notes-list>
         </div>
-        <!-- <div class="side-bar-container">
-            filterNav
-        </div> -->
+        <div class="side-bar-container">
+            <editor-bar2></editor-bar2>
+        </div>
     </section>
     `,
     data(){

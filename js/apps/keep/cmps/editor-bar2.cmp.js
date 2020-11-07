@@ -9,10 +9,10 @@ export default {
     template: `
         <section class="editor-bar">
             <div class="action-btns-container">
-                <button @click="addNote('noteText')" >Text</button>
-                <button @click="addNote('noteToDo')" >ToDo</button>
-                <button @click="addNote('noteImg')" >Image</button>
-                <button @click="addNote('noteVidoe')" >Vidoe</button>
+                <button class="btn" @click="addNote('noteText')" >Text</button>
+                <button class="btn" @click="addNote('noteToDo')" >ToDo</button>
+                <button class="btn" @click="addNote('noteImg')" >Image</button>
+                <button class="btn" @click="addNote('noteVidoe')" >Vidoe</button>
             </div>
             
         </section>
