@@ -1,15 +1,32 @@
 .email-compose {
     display: flex;
+    margin: 30px;
 }
 
 .btn {
     width: 80px;
     height: 30px;
-    border: solid 1.5px black;
+    border: solid 1px rgb(95, 91, 91);
     padding: 3px;
     margin-bottom: 10px;
+    border-radius: 3px;
 }
 
 .btn:hover {
-    box-shadow: 5px 5px 5px lightgrey;
+    box-shadow: 8px 8px 8px lightgrey;
+}
+
+.mail-to-subject,
+.mail-compose-body {
+    margin: 10px;
+}
+
+.mail-to-subject:hover,
+.mail-compose-body:hover {
+    background-color: rgb(196, 196, 196);
+}
+
+.go-back,
+.send-mail {
+    color: rgb(51, 48, 48);
 }

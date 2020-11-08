@@ -1,11 +1,12 @@
 @import './cmp/email-preview.css';
 @import './cmp/email-compose.css';
+@import './cmp/email-side-bar.css';
 
 /*  */
 
 .email.app-container {
     --editor-bar-height: 80px;
-    --side-bar-width: 150px;
+    --side-bar-width: 120px;
     display: grid;
     grid-template: 1fr / var(--side-bar-width) 1fr;
     width: 100%;

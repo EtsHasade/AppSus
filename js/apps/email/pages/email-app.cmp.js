@@ -1,6 +1,7 @@
 'use strict';
 
-import emailList from '../cmps/email-list.cmp.js'
+import emailList from '../cmps/email-list.cmp.js';
+import emailSideBar from '../cmps/email-side-bar.cmp.js'
 //DATA MODEL:
 //gEmails = [];
 
@@ -10,18 +11,18 @@ export default {
     template: `
     <section class="email app-container">
         <div class="main-app-container">
-            <!-- <email-list :mails = "mails"></email-list> -->
+            <!-- rander mails list -->
             <router-view></router-view>
         </div>
+
         <div class="side-bar-container">
-            <!-- <editor-bar></editor-bar> -->
-            <!-- <filter-nav></filter-nav> -->
-            fillter--email
+            <email-Side-Bar></email-Side-Bar>
         </div>
     </section>
     `,
 
     components: {
-        emailList
+        emailList,
+        emailSideBar
     },
 }

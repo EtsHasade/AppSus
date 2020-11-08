@@ -5,7 +5,10 @@ import keepApp from './apps/keep/pages/keep-app.cmp.js';
 import emailApp from './apps/email/pages/email-app.cmp.js';
 import emailCompose from './apps/email/pages/email-compose.cmp.js';
 import emailList from './apps/email/cmps/email-list.cmp.js';
-// import emailDetails from './apps/email/cmps/email-details.cmp';
+import emailInbox from './apps/email/cmps/email-inbox.cmp.js';
+import emailFavorites from './apps/email/cmps/email-favorites.cmp.js';
+import emailSent from './apps/email/cmps/email-sent.cmp.js';
+import emailSnooz from './apps/email/cmps/email-snooz.cmp.js';
 
 
 
@@ -28,6 +31,22 @@ const routes = [{
             {
                 path: 'compose',
                 component: emailCompose
+            },
+            {
+                path: 'inbox',
+                component: emailInbox
+            },
+            {
+                path: 'favorites',
+                component: emailFavorites
+            },
+            {
+                path: 'sent',
+                component: emailSent
+            },
+            {
+                path: 'snooz',
+                component: emailSnooz
             },
             // {
             //     path: 'details:id',

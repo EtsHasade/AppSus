@@ -6,10 +6,13 @@ import { emailService } from '../services/email-services.js'
 
 
 export default {
-    name: 'email-list',
+    name: 'email-favorites',
     template: `
         <ul class="mail-list">
-            <email-preview v-for="mail in mails" :key="mail.id" :mail="mail"></email-preview>
+            <email-preview v-for="mail in mails" v-if="mail.isStarred === true" :key="mail.id" :mail="mail"></email-preview>
+            <div class="btn go-back">
+                    <router-link to="/email">Go back</router-link>
+            </div>
         </ul>
     `,
     data() {
