@@ -6,6 +6,7 @@
 @import './cmp/note-vidoe.css';
 @import './cmp/long-url.css';
 @import './cmp/editor-bar.css';
+@import './cmp/compose-note.css';
 
 .keep * {
     transition: 0.1s;

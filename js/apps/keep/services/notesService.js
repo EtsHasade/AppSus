@@ -28,7 +28,7 @@ const noteTypes = {
     noteText: {
         type: 'noteText',
         info: {
-            txt: `your msg...`,
+            txt: ``,
             label: "My title...",
         }
     },

@@ -17,7 +17,7 @@ export default {
                     <!-- <div class="todo-txt" contenteditable="true" name="doneAt" @blur="onSaveTxt(idx, 'doneAt')" >{{todo.doneAt}}</div> -->
                 </div>
                 <div class="add-todo">
-                    <button class="btn add" @click="addTodo"><i class="far fa-plus-square"></i></button>
+                    <button class="add" @click="addTodo"><i class="far fa-plus-square"></i></button>
                 </div>
             </div>
         </section>

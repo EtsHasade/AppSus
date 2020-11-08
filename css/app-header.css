@@ -26,5 +26,8 @@
     font-family: Hind-SemiBold, sans-serif;
     font-size: larger;
     border-radius: 20px;
+}
 
+.logo *{
+    margin-right: -2em;
 }

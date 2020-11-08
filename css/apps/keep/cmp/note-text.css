@@ -9,4 +9,7 @@
     border: none;
     resize: none;
     width: 95%;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
 }
