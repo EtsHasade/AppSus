@@ -40,7 +40,7 @@ export default {
         
         eventBus.$on('saveNote',(evValue) =>{
             notesService.addOrUpdateNote(evValue);
-             this.notes = notesService.getNotes();
+            this.notes = notesService.getNotes();
         })
     }
 }

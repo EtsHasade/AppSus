@@ -12,9 +12,4 @@ export default {
     components:{
         notePreview
     },
-    data(){
-        return{
-
-        }
-    }
 }

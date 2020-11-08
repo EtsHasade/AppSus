@@ -14,10 +14,11 @@ export default {
     name: 'composeNote',
     props: ['note'],
     template:`
-    <section  class="note-preview-container" :class="{'open-note': isSelected, }" :style='note.style'>  
-        <component :is="note.type" class="note-preview" :class="{pinned: note.isPinned}" :note="note" @click.native="isSelected = true"></component>
+    <section  class="compose-note-container note-preview-container" >  
+        <div class="screen" @click="deleteNote"></div>
+        <component :is="note.type" class="compose-note note-preview" :class="{pinned: note.isPinned}" :note="note" ></component>
         <note-menu-bar :note="note"></note-menu-bar>
-        <button>Save</button>
+        <button @click.stop="saveAndClose" >Save</button>
     </section>
     `,
     components:{
@@ -30,7 +31,7 @@ export default {
     },
     data(){
         return {
-            note
+
         }
     },
     methods:{
@@ -38,6 +39,18 @@ export default {
             console.log('text: this.note', this.note);
             eventBus.$emit('saveNote', this.note)
         },
+        saveAndClose(){
+            notesService.addOrUpdateNote(this.note);
+            this.$emit('closeNewNote')
+            eventBus.$emit('saveNote', this.note)
+
+        },
+        deleteNote() {
+            notesService.deleteNoteById(this.note.id);
+            this.$emit('closeNewNote')
+            console.log('DELLLLLL');
+            
+        }
     }
 
 }

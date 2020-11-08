@@ -1,6 +1,8 @@
-
+.note-img{
+    padding: 5px;
+}
 
 .note-img img{
     width: 100%;
-    
+    border-radius: 2px;
 }
